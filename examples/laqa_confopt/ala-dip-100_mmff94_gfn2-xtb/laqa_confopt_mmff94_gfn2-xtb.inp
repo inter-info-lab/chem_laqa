@@ -1,0 +1,35 @@
+[Molecule]
+
+smiles = "CC(=O)N[C@H](C(=O)NC)C"
+
+[Initial geometry]
+
+popsize = 100
+cntmax = 300
+seed = 0
+optsteps = 100
+
+#RDKit FF
+energy_function = "ff"
+force_field = "mmff94"
+force_tol = 1.0e-4
+energy_tol = 1.0e-6
+
+[LAQA settings]
+
+# LAQA parameers
+struct_conv = 10
+macro_opt_cycle = 200
+micro_opt_cycle = 5
+thr_econv = 5.0e-4
+thr_fconv = 1.0e-6
+printlevel = 0
+
+#QM parameters
+charge = 0
+mult = 1
+
+#xTB settings
+energy_function = "xtb"
+#xtb_call = "/home/z43901k/data/bin/xtb/6.4.0/bin/xtb"
+gfn = "2"

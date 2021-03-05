@@ -1,0 +1,16 @@
+[Molecule]
+
+smiles = "CC(=O)N[C@H](C(=O)NC)C"
+
+[Initial geometry]
+
+popsize = 100
+cntmax = 300
+seed = 0
+optsteps = 100
+
+#RDKit FF
+energy_function = "ff"
+force_field = "mmff94"
+force_tol = 1.0e-4
+energy_tol = 1.0e-6

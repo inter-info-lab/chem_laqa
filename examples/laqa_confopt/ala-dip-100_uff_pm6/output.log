@@ -1,0 +1,1950 @@
+
+Start LAQA conforation searh job at  2021-02-23 01:37:14.336731 
+
+
+Start 3D structure initialization job at  2021-02-23 01:37:14.336763 
+
+Setting a default value for energy_var: 0.001
+Setting a default value for selection: roulette_wheel
+Setting a default value for fitness_sum_limit: 1.2
+Setting a default value for prob_for_crossing: 1.0
+Setting a default value for max_iter: 30
+Setting a default value for iter_limit_conv: 20
+Setting a default value for energy_diff_conv: 0.001
+Setting a default value for cnt_max: 500
+Setting a default value for xtb_call: xtb
+Setting a default value for gfn: 2
+Setting a default value for alpb: None
+Setting a default value for gauss_exedir: ~/bin/g16
+Setting a default value for gauss_scrdir: /data/group1/z43901k/work/laqa/laqa/newcode/examples/laqa_confopt/ala-dip-100_uff_pm6
+Setting a default value for qcmethod: pm6
+Setting a default value for solvmethod: None
+Setting a default value for solvent: water
+Setting a default value for charge: 0
+Setting a default value for mult: 1
+Setting a default value for nprocs: 1
+Setting a default value for memory: 2GB
+Setting a default value for sdf_out: initial_structures.sdf
+Setting a default value for printlevel: 0
+params:  {'popsize': 100, 'cntmax': 300, 'seed': 0, 'optsteps': 100, 'energy_function': 'ff', 'force_field': 'uff', 'force_tol': 0.0001, 'energy_tol': 1e-06, 'energy_var': 0.001, 'selection': 'roulette_wheel', 'fitness_sum_limit': 1.2, 'prob_for_crossing': 1.0, 'max_iter': 30, 'iter_limit_conv': 20, 'energy_diff_conv': 0.001, 'cnt_max': 500, 'xtb_call': 'xtb', 'gfn': '2', 'alpb': None, 'gauss_exedir': '~/bin/g16', 'gauss_scrdir': '/data/group1/z43901k/work/laqa/laqa/newcode/examples/laqa_confopt/ala-dip-100_uff_pm6', 'qcmethod': 'pm6', 'solvmethod': None, 'solvent': 'water', 'charge': 0, 'mult': 1, 'nprocs': 1, 'memory': '2GB', 'sdf_out': 'initial_structures.sdf', 'printlevel': 0}
+Local optimization will be performed with RDKit.
+energy_function:  ff
+popsize: 100 cnt_max:  500 seed  0
+Setting a default value for rmsd_type: cartesian
+Setting a default value for distance_cutoff_1: 1.3
+Setting a default value for distance_cutoff_2: 2.15
+Setting a default value for rmsd_cutoff_uniq: 0.2
+Setting a default value for chiral: True
+Setting a default value for optimize_torsion: True
+Setting a default value for smarts_torsion: [*]~[!$(*#*)&!D1]-&!@[!$(*#*)&!D1]~[*]
+SMILES:  CC(=O)N[C@H](C(=O)NC)C
+distance_cutoff_1:  1.3
+distance_cutoff_2:  2.15
+Number of atoms:  22
+Number of bonds:  21
+Number of identified torsion: 4
+Identified  torsion: [(1, 3, 4, 9), (2, 1, 3, 4), (6, 5, 7, 8), (7, 5, 4, 9)]
+
+___Initialization of 3D structures ___
+
+
+----- New trial:      1 -----
+
+Geometry of Structure 1 is added to the population, energy: 0.44068
+Structure 1
+Values of torsion before: [18.0, 36.0, -159.0, -47.0] and after local opt: [84.3, 3.66, -177.14, -98.85]
+
+----- New trial:      2 -----
+
+Geometry of Structure 2 is added to the population, energy: 0.39183
+Structure 2
+Values of torsion before: [82.0, 69.0, 28.0, -24.0] and after local opt: [75.86, -7.98, 4.69, 55.57]
+
+----- New trial:      3 -----
+
+Geometry of Structure 3 is added to the population, energy: 0.43804
+Structure 3
+Values of torsion before: [65.0, 4.0, 119.0, -68.0] and after local opt: [96.13, 4.27, -177.26, -95.73]
+
+----- New trial:      4 -----
+
+Geometry of Structure 4 is added to the population, energy: 0.41588
+Structure 4
+Values of torsion before: [79.0, -108.0, -35.0, -108.0] and after local opt: [92.75, -174.97, 1.15, -112.24]
+
+----- New trial:      5 -----
+
+Geometry of Structure 5 is invalid.
+
+----- New trial:      6 -----
+
+Geometry of Structure 6 is added to the population, energy: 0.37267
+Structure 6
+Values of torsion before: [129.0, -104.0, -21.0, -129.0] and after local opt: [164.25, 178.24, 1.5, -102.04]
+
+----- New trial:      7 -----
+
+Geometry of Structure 7 is added to the population, energy: 0.36953
+Structure 7
+Values of torsion before: [-142.0, 171.0, -10.0, 62.0] and after local opt: [165.08, 177.64, -2.1, 74.38]
+
+----- New trial:      8 -----
+
+Geometry of Structure 8 is added to the population, energy: 0.36955
+Structure 8
+Values of torsion before: [106.99, -127.99, 2.0, 43.0] and after local opt: [165.08, 177.81, -1.79, 74.29]
+
+----- New trial:      9 -----
+
+Geometry of Structure 9 is added to the population, energy: 0.68373
+Structure 9
+Values of torsion before: [-17.99, 133.0, 148.0, -75.0] and after local opt: [-56.34, -167.93, 171.57, -80.45]
+
+----- New trial:     10 -----
+
+Geometry of Structure 10 is added to the population, energy: 0.33892
+Structure 10
+Values of torsion before: [103.0, 65.0, 47.0, 87.0] and after local opt: [166.22, -0.45, -1.6, 72.62]
+
+----- New trial:     11 -----
+
+Geometry of Structure 11 is invalid.
+
+----- New trial:     12 -----
+
+Geometry of Structure 12 is invalid.
+
+----- New trial:     13 -----
+
+Geometry of Structure 13 is added to the population, energy: 0.37004
+Structure 13
+Values of torsion before: [-179.0, 134.0, 73.0, -9.0] and after local opt: [164.25, 177.3, -1.69, 73.8]
+
+----- New trial:     14 -----
+
+Geometry of Structure 14 is added to the population, energy: 0.52636
+Structure 14
+Values of torsion before: [-55.0, -13.0, -147.0, -82.0] and after local opt: [-54.23, -1.44, 178.67, -89.37]
+
+----- New trial:     15 -----
+
+Geometry of Structure 15 is added to the population, energy: 0.37857
+Structure 15
+Values of torsion before: [111.0, -66.0, -57.0, -107.0] and after local opt: [81.53, 2.16, -0.59, -123.04]
+
+----- New trial:     16 -----
+
+Geometry of Structure 16 is added to the population, energy: 0.39608
+Structure 16
+Values of torsion before: [99.0, 50.0, -133.0, -138.0] and after local opt: [165.97, 0.67, -179.55, -95.62]
+
+----- New trial:     17 -----
+
+Geometry of Structure 17 is added to the population, energy: 0.47445
+Structure 17
+Values of torsion before: [-16.01, 81.01, 71.0, -124.0] and after local opt: [-57.51, 5.33, 8.24, -93.29]
+
+----- New trial:     18 -----
+
+Geometry of Structure 18 is added to the population, energy: 0.53964
+Structure 18
+Values of torsion before: [-25.0, 103.0, -30.0, -116.0] and after local opt: [-69.19, 162.54, 2.05, -176.32]
+
+----- New trial:     19 -----
+
+Geometry of Structure 19 is added to the population, energy: 0.43770
+Structure 19
+Values of torsion before: [101.0, -9.0, 97.0, -75.0] and after local opt: [95.49, 3.17, -177.39, -95.66]
+
+----- New trial:     20 -----
+
+Geometry of Structure 20 is added to the population, energy: 0.47198
+Structure 20
+Values of torsion before: [129.0, 101.0, 121.0, -32.0] and after local opt: [93.84, -175.0, -177.18, -96.15]
+
+----- New trial:     21 -----
+
+Geometry of Structure 21 is added to the population, energy: 0.79202
+Structure 21
+Values of torsion before: [48.0, -133.0, 126.0, 18.0] and after local opt: [90.2, -175.55, 105.47, 58.54]
+
+----- New trial:     22 -----
+
+Geometry of Structure 22 is added to the population, energy: 0.60490
+Structure 22
+Values of torsion before: [-17.0, 115.0, -56.0, -31.0] and after local opt: [-69.77, 163.6, -3.74, 12.18]
+
+----- New trial:     23 -----
+
+Geometry of Structure 23 is added to the population, energy: 0.42246
+Structure 23
+Values of torsion before: [-85.0, -83.0, -84.0, -163.0] and after local opt: [-67.1, -0.92, -0.74, -163.06]
+
+----- New trial:     24 -----
+
+Geometry of Structure 24 is added to the population, energy: 0.36953
+Structure 24
+Values of torsion before: [134.0, 157.0, -46.0, 64.0] and after local opt: [165.1, 177.65, -2.12, 74.41]
+
+----- New trial:     25 -----
+
+Geometry of Structure 25 is added to the population, energy: 0.41404
+Structure 25
+Values of torsion before: [-144.0, -133.99, 168.0, -113.0] and after local opt: [165.13, 177.47, -179.67, -96.61]
+
+----- New trial:     26 -----
+
+Geometry of Structure 26 is added to the population, energy: 0.58454
+Structure 26
+Values of torsion before: [-102.99, -160.0, -138.0, 179.0] and after local opt: [-69.17, 161.77, 179.29, -169.79]
+
+----- New trial:     27 -----
+
+Geometry of Structure 27 is added to the population, energy: 0.41645
+Structure 27
+Values of torsion before: [97.0, 170.0, 21.0, 89.0] and after local opt: [90.32, -174.16, 0.31, 60.69]
+
+----- New trial:     28 -----
+
+Geometry of Structure 28 is added to the population, energy: 0.46680
+Structure 28
+Values of torsion before: [-38.0, 88.0, -59.0, -69.0] and after local opt: [-56.11, -0.3, -1.06, -82.25]
+
+----- New trial:     29 -----
+
+Geometry of Structure 29 is added to the population, energy: 0.36963
+Structure 29
+Values of torsion before: [168.0, 122.0, 35.0, 117.0] and after local opt: [165.73, 178.19, -2.02, 74.52]
+
+----- New trial:     30 -----
+
+Geometry of Structure 30 is added to the population, energy: 0.42457
+Structure 30
+Values of torsion before: [-39.0, 51.0, 73.0, 159.0] and after local opt: [-67.52, -0.97, -0.75, -171.55]
+
+----- New trial:     31 -----
+
+Geometry of Structure 31 is added to the population, energy: 0.37258
+Structure 31
+Values of torsion before: [148.99, 179.0, 3.0, -137.0] and after local opt: [164.01, 177.81, 2.25, -101.55]
+
+----- New trial:     32 -----
+
+Geometry of Structure 32 is added to the population, energy: 0.98547
+Structure 32
+Values of torsion before: [-13.0, 134.0, -120.0, 70.0] and after local opt: [41.38, 84.26, -159.07, 67.05]
+
+----- New trial:     33 -----
+
+Geometry of Structure 33 is added to the population, energy: 0.41497
+Structure 33
+Values of torsion before: [121.0, 143.0, -8.0, -82.0] and after local opt: [91.42, -174.43, -0.81, -123.95]
+
+----- New trial:     34 -----
+
+Geometry of Structure 34 is added to the population, energy: 0.54607
+Structure 34
+Values of torsion before: [-55.0, -171.0, -41.0, -120.0] and after local opt: [-67.65, -175.5, 4.53, 175.99]
+
+----- New trial:     35 -----
+
+Geometry of Structure 35 is added to the population, energy: 0.46222
+Structure 35
+Values of torsion before: [-67.0, 10.99, -92.0, -9.0] and after local opt: [-56.91, -3.49, -0.61, -70.76]
+
+----- New trial:     36 -----
+
+Geometry of Structure 36 is added to the population, energy: 0.49403
+Structure 36
+Values of torsion before: [39.0, -148.0, -128.0, -105.0] and after local opt: [86.19, -173.8, -179.47, -106.38]
+
+----- New trial:     37 -----
+
+Geometry of Structure 37 is invalid.
+
+----- New trial:     38 -----
+
+Geometry of Structure 38 is invalid.
+
+----- New trial:     39 -----
+
+Geometry of Structure 39 is invalid.
+
+----- New trial:     40 -----
+
+Geometry of Structure 40 is added to the population, energy: 0.58228
+Structure 40
+Values of torsion before: [-83.0, 131.0, 115.0, -118.0] and after local opt: [-70.01, 163.76, -178.49, -169.28]
+
+----- New trial:     41 -----
+
+Geometry of Structure 41 is added to the population, energy: 0.41544
+Structure 41
+Values of torsion before: [21.0, -133.0, 10.0, -120.0] and after local opt: [91.69, -173.79, 0.59, -115.68]
+
+----- New trial:     42 -----
+
+Geometry of Structure 42 is added to the population, energy: 0.41349
+Structure 42
+Values of torsion before: [-161.0, 131.0, -168.0, -80.0] and after local opt: [163.53, 177.78, -179.5, -96.96]
+
+----- New trial:     43 -----
+
+Geometry of Structure 43 is added to the population, energy: 0.57882
+Structure 43
+Values of torsion before: [-85.0, -116.0, 66.0, -72.0] and after local opt: [-60.96, -176.97, -5.45, -49.27]
+
+----- New trial:     44 -----
+
+Geometry of Structure 44 is invalid.
+
+----- New trial:     45 -----
+
+Geometry of Structure 45 is added to the population, energy: 0.92787
+Structure 45
+Values of torsion before: [37.99, 138.01, -128.0, -46.0] and after local opt: [-29.95, 148.32, -128.95, -96.13]
+
+----- New trial:     46 -----
+
+Geometry of Structure 46 is invalid.
+
+----- New trial:     47 -----
+
+Geometry of Structure 47 is added to the population, energy: 0.46218
+Structure 47
+Values of torsion before: [-25.0, 0.0, 44.0, -87.0] and after local opt: [-56.73, -4.11, -0.52, -70.51]
+
+----- New trial:     48 -----
+
+Geometry of Structure 48 is added to the population, energy: 0.35197
+Structure 48
+Values of torsion before: [-148.0, 78.01, 60.0, -159.0] and after local opt: [167.53, -0.42, 0.4, -103.82]
+
+----- New trial:     49 -----
+
+Geometry of Structure 49 is added to the population, energy: 0.67486
+Structure 49
+Values of torsion before: [126.0, -128.0, 179.0, 21.0] and after local opt: [150.61, -173.28, -148.45, 56.3]
+
+----- New trial:     50 -----
+
+Geometry of Structure 50 is added to the population, energy: 0.48129
+Structure 50
+Values of torsion before: [-77.0, -46.0, 4.0, 61.0] and after local opt: [-67.1, -1.6, 0.94, 28.05]
+
+----- New trial:     51 -----
+
+Geometry of Structure 51 is invalid.
+
+----- New trial:     52 -----
+
+Geometry of Structure 52 is added to the population, energy: 0.68373
+Structure 52
+Values of torsion before: [-75.0, -150.0, 167.0, -98.0] and after local opt: [-56.33, -167.93, 171.56, -80.45]
+
+----- New trial:     53 -----
+
+Geometry of Structure 53 is added to the population, energy: 0.46999
+Structure 53
+Values of torsion before: [-97.0, -4.0, 92.0, -51.0] and after local opt: [-57.55, -4.11, -6.05, -60.76]
+
+----- New trial:     54 -----
+
+Geometry of Structure 54 is invalid.
+
+----- New trial:     55 -----
+
+Geometry of Structure 55 is added to the population, energy: 0.54529
+Structure 55
+Values of torsion before: [-90.0, -173.0, 62.0, 169.0] and after local opt: [-67.97, -174.61, 3.94, 173.79]
+
+----- New trial:     56 -----
+
+Geometry of Structure 56 is added to the population, energy: 0.41246
+Structure 56
+Values of torsion before: [30.0, 111.99, 81.0, -20.0] and after local opt: [79.57, 13.83, 4.47, 68.46]
+
+----- New trial:     57 -----
+
+Geometry of Structure 57 is added to the population, energy: 0.37925
+Structure 57
+Values of torsion before: [153.0, 3.0, 19.0, 157.0] and after local opt: [84.44, 1.76, -0.73, -123.43]
+
+----- New trial:     58 -----
+
+Geometry of Structure 58 is added to the population, energy: 0.45756
+Structure 58
+Values of torsion before: [-51.0, -101.0, 108.0, 174.0] and after local opt: [-69.02, 1.66, 177.47, -163.13]
+
+----- New trial:     59 -----
+
+Geometry of Structure 59 is added to the population, energy: 0.47319
+Structure 59
+Values of torsion before: [-173.0, 55.0, -139.0, -8.0] and after local opt: [165.36, -5.77, -173.29, 76.99]
+
+----- New trial:     60 -----
+
+Geometry of Structure 60 is added to the population, energy: 0.37258
+Structure 60
+Values of torsion before: [-156.0, 99.0, -36.0, -110.0] and after local opt: [164.01, 177.81, 2.26, -101.54]
+
+----- New trial:     61 -----
+
+Geometry of Structure 61 is added to the population, energy: 0.42227
+Structure 61
+Values of torsion before: [-56.99, 66.99, 1.0, 133.0] and after local opt: [-66.54, -2.77, -1.67, -164.64]
+
+----- New trial:     62 -----
+
+Geometry of Structure 62 is added to the population, energy: 0.54529
+Structure 62
+Values of torsion before: [-32.0, 165.0, 4.0, 123.0] and after local opt: [-67.94, -174.65, 3.94, 173.79]
+
+----- New trial:     63 -----
+
+Geometry of Structure 63 is added to the population, energy: 0.60362
+Structure 63
+Values of torsion before: [145.0, 138.0, -112.0, -21.0] and after local opt: [153.64, 173.25, 175.6, 64.63]
+
+----- New trial:     64 -----
+
+Geometry of Structure 64 is added to the population, energy: 0.41950
+Structure 64
+Values of torsion before: [18.99, 33.0, 154.0, -138.0] and after local opt: [87.06, 2.55, 175.67, -157.79]
+
+----- New trial:     65 -----
+
+Geometry of Structure 65 is added to the population, energy: 0.44216
+Structure 65
+Values of torsion before: [-179.0, 125.0, -81.0, 178.0] and after local opt: [110.45, -178.4, -2.81, -160.69]
+
+----- New trial:     66 -----
+
+Geometry of Structure 66 is added to the population, energy: 0.46341
+Structure 66
+Values of torsion before: [-8.0, -98.0, -57.0, -65.0] and after local opt: [-56.32, -1.44, 1.46, -76.62]
+
+----- New trial:     67 -----
+
+Geometry of Structure 67 is added to the population, energy: 0.36331
+Structure 67
+Values of torsion before: [147.0, 49.99, 14.0, 165.0] and after local opt: [158.34, -3.8, 0.93, -122.29]
+
+----- New trial:     68 -----
+
+Geometry of Structure 68 is invalid.
+
+----- New trial:     69 -----
+
+Geometry of Structure 69 is added to the population, energy: 0.42017
+Structure 69
+Values of torsion before: [-180.0, 110.99, 35.0, 160.0] and after local opt: [95.32, -171.41, 2.12, -128.1]
+
+----- New trial:     70 -----
+
+Geometry of Structure 70 is added to the population, energy: 0.34952
+Structure 70
+Values of torsion before: [-156.0, -94.99, 49.0, -147.0] and after local opt: [165.81, -1.83, 1.56, -102.53]
+
+----- New trial:     71 -----
+
+Geometry of Structure 71 is added to the population, energy: 0.82843
+Structure 71
+Values of torsion before: [-47.0, -180.0, -99.0, 49.0] and after local opt: [-62.54, -134.31, 6.54, 51.34]
+
+----- New trial:     72 -----
+
+Geometry of Structure 72 is added to the population, energy: 0.46891
+Structure 72
+Values of torsion before: [91.0, 70.0, 108.0, 130.0] and after local opt: [166.34, -2.62, -169.28, 74.12]
+
+----- New trial:     73 -----
+
+Geometry of Structure 73 is added to the population, energy: 0.54068
+Structure 73
+Values of torsion before: [-179.0, -160.0, 74.0, -13.0] and after local opt: [116.77, -14.84, -17.83, 9.69]
+
+----- New trial:     74 -----
+
+Geometry of Structure 74 is invalid.
+
+----- New trial:     75 -----
+
+Geometry of Structure 75 is added to the population, energy: 0.58228
+Structure 75
+Values of torsion before: [-83.0, 101.0, 145.0, -137.0] and after local opt: [-70.04, 163.83, -178.37, -169.22]
+
+----- New trial:     76 -----
+
+Geometry of Structure 76 is invalid.
+
+----- New trial:     77 -----
+
+Geometry of Structure 77 is added to the population, energy: 0.44049
+Structure 77
+Values of torsion before: [33.99, -17.99, -178.0, -70.0] and after local opt: [86.77, 6.45, -175.25, -98.21]
+
+----- New trial:     78 -----
+
+Geometry of Structure 78 is added to the population, energy: 0.50437
+Structure 78
+Values of torsion before: [-172.0, -178.01, 166.0, 91.0] and after local opt: [165.68, -179.76, -168.1, 74.9]
+
+----- New trial:     79 -----
+
+Geometry of Structure 79 is added to the population, energy: 0.37272
+Structure 79
+Values of torsion before: [134.0, -129.0, -82.0, -119.0] and after local opt: [164.14, 176.62, 2.26, -101.36]
+
+----- New trial:     80 -----
+
+Geometry of Structure 80 is added to the population, energy: 0.41662
+Structure 80
+Values of torsion before: [132.0, 153.0, -78.0, -25.0] and after local opt: [91.03, -172.36, 1.92, -111.52]
+
+----- New trial:     81 -----
+
+Geometry of Structure 81 is added to the population, energy: 0.82360
+Structure 81
+Values of torsion before: [-36.0, 173.0, -86.0, -128.0] and after local opt: [-58.18, 178.29, -165.97, -96.59]
+
+----- New trial:     82 -----
+
+Geometry of Structure 82 is added to the population, energy: 0.41924
+Structure 82
+Values of torsion before: [64.01, 23.99, 142.0, -138.0] and after local opt: [88.65, 1.76, 175.64, -157.43]
+
+----- New trial:     83 -----
+
+Geometry of Structure 83 is added to the population, energy: 0.34902
+Structure 83
+Values of torsion before: [-168.0, -39.0, 52.0, -120.0] and after local opt: [166.81, -1.24, 1.77, -101.17]
+
+----- New trial:     84 -----
+
+Geometry of Structure 84 is invalid.
+
+----- New trial:     85 -----
+
+Geometry of Structure 85 is added to the population, energy: 0.37258
+Structure 85
+Values of torsion before: [154.0, 151.0, -2.0, -121.0] and after local opt: [164.0, 177.81, 2.25, -101.55]
+
+----- New trial:     86 -----
+
+Geometry of Structure 86 is added to the population, energy: 0.45540
+Structure 86
+Values of torsion before: [-100.0, -37.0, -170.0, -158.0] and after local opt: [-67.88, -1.05, 178.63, -163.03]
+
+----- New trial:     87 -----
+
+Geometry of Structure 87 is invalid.
+
+----- New trial:     88 -----
+
+Geometry of Structure 88 is added to the population, energy: 0.33838
+Structure 88
+Values of torsion before: [106.0, -18.0, 8.0, 111.0] and after local opt: [167.25, 0.18, -1.36, 72.82]
+
+----- New trial:     89 -----
+
+Geometry of Structure 89 is invalid.
+
+----- New trial:     90 -----
+
+Geometry of Structure 90 is added to the population, energy: 0.42293
+Structure 90
+Values of torsion before: [74.0, 150.0, 55.0, 148.0] and after local opt: [94.35, 179.64, -2.99, -142.94]
+
+----- New trial:     91 -----
+
+Geometry of Structure 91 is added to the population, energy: 0.42054
+Structure 91
+Values of torsion before: [43.01, 11.0, 96.0, -88.0] and after local opt: [95.27, 3.17, 175.15, -156.79]
+
+----- New trial:     92 -----
+
+Geometry of Structure 92 is added to the population, energy: 0.52636
+Structure 92
+Values of torsion before: [-72.99, 12.99, 121.0, -30.0] and after local opt: [-54.18, -1.56, 178.69, -89.38]
+
+----- New trial:     93 -----
+
+Geometry of Structure 93 is invalid.
+
+----- New trial:     94 -----
+
+Geometry of Structure 94 is added to the population, energy: 0.42258
+Structure 94
+Values of torsion before: [-9.0, -7.0, 9.0, -132.0] and after local opt: [-66.54, -2.92, -0.56, -164.19]
+
+----- New trial:     95 -----
+
+Geometry of Structure 95 is added to the population, energy: 0.45473
+Structure 95
+Values of torsion before: [-6.01, 138.0, -161.0, -158.0] and after local opt: [91.43, 19.16, 170.28, -145.69]
+
+----- New trial:     96 -----
+
+Geometry of Structure 96 is added to the population, energy: 0.45596
+Structure 96
+Values of torsion before: [-41.0, -96.0, -103.0, 119.0] and after local opt: [-68.3, 0.41, 178.77, -162.74]
+
+----- New trial:     97 -----
+
+Geometry of Structure 97 is added to the population, energy: 0.42242
+Structure 97
+Values of torsion before: [-31.0, 5.0, 23.0, 101.0] and after local opt: [-67.26, -1.1, -1.43, -163.56]
+
+----- New trial:     98 -----
+
+Geometry of Structure 98 is invalid.
+
+----- New trial:     99 -----
+
+Geometry of Structure 99 is added to the population, energy: 0.58481
+Structure 99
+Values of torsion before: [-56.99, -155.0, -22.0, -88.0] and after local opt: [-61.03, -173.25, -4.03, -57.73]
+
+----- New trial:    100 -----
+
+Geometry of Structure 100 is added to the population, energy: 0.41645
+Structure 100
+Values of torsion before: [88.0, -143.0, -25.0, 27.0] and after local opt: [90.32, -174.16, 0.3, 60.67]
+
+----- New trial:    101 -----
+
+Geometry of Structure 101 is added to the population, energy: 0.42458
+Structure 101
+Values of torsion before: [-10.99, -26.01, 33.0, -124.0] and after local opt: [-66.26, -1.88, 2.11, -159.05]
+
+----- New trial:    102 -----
+
+Geometry of Structure 102 is added to the population, energy: 0.36953
+Structure 102
+Values of torsion before: [-129.0, 108.0, 67.0, 63.0] and after local opt: [165.06, 177.67, -2.09, 74.37]
+
+----- New trial:    103 -----
+
+Geometry of Structure 103 is added to the population, energy: 0.63229
+Structure 103
+Values of torsion before: [-7.01, -4.0, -116.0, 66.0] and after local opt: [60.51, -0.66, -171.87, 65.94]
+
+----- New trial:    104 -----
+
+Geometry of Structure 104 is invalid.
+
+----- New trial:    105 -----
+
+Geometry of Structure 105 is invalid.
+
+----- New trial:    106 -----
+
+Geometry of Structure 106 is invalid.
+
+----- New trial:    107 -----
+
+Geometry of Structure 107 is added to the population, energy: 0.77756
+Structure 107
+Values of torsion before: [13.0, 148.0, -135.0, -146.0] and after local opt: [-31.19, 154.94, -176.35, -96.0]
+
+----- New trial:    108 -----
+
+Geometry of Structure 108 is added to the population, energy: 0.34902
+Structure 108
+Values of torsion before: [-136.0, -78.0, -66.0, -148.0] and after local opt: [166.82, -1.27, 1.94, -100.73]
+
+----- New trial:    109 -----
+
+Geometry of Structure 109 is invalid.
+
+----- New trial:    110 -----
+
+Geometry of Structure 110 is added to the population, energy: 0.33827
+Structure 110
+Values of torsion before: [105.0, 86.0, -31.0, 50.0] and after local opt: [167.49, -1.24, -1.17, 72.91]
+
+----- New trial:    111 -----
+
+Geometry of Structure 111 is added to the population, energy: 0.47440
+Structure 111
+Values of torsion before: [71.01, 119.99, 168.0, -68.0] and after local opt: [94.37, -179.6, -177.81, -99.73]
+
+----- New trial:    112 -----
+
+Geometry of Structure 112 is added to the population, energy: 0.41609
+Structure 112
+Values of torsion before: [36.99, -137.0, 9.0, -67.0] and after local opt: [91.75, -174.16, 0.21, -111.58]
+
+----- New trial:    113 -----
+
+Geometry of Structure 113 is invalid.
+
+----- New trial:    114 -----
+
+Geometry of Structure 114 is added to the population, energy: 0.45533
+Structure 114
+Values of torsion before: [-81.0, 4.0, -121.0, -147.0] and after local opt: [-67.68, -1.59, 178.67, -163.04]
+
+----- New trial:    115 -----
+
+Geometry of Structure 115 is added to the population, energy: 0.36954
+Structure 115
+Values of torsion before: [180.0, -165.0, 90.0, 52.0] and after local opt: [165.19, 177.84, -2.25, 74.26]
+
+----- New trial:    116 -----
+
+Geometry of Structure 116 is invalid.
+
+----- New trial:    117 -----
+
+Geometry of Structure 117 is added to the population, energy: 0.37288
+Structure 117
+Values of torsion before: [23.99, -48.0, -73.0, 149.0] and after local opt: [75.79, 2.84, 0.2, 62.31]
+
+----- New trial:    118 -----
+
+Geometry of Structure 118 is added to the population, energy: 0.39590
+Structure 118
+Values of torsion before: [-158.0, -69.01, 140.0, -105.0] and after local opt: [166.47, -1.06, -179.04, -95.54]
+
+----- New trial:    119 -----
+
+Geometry of Structure 119 is added to the population, energy: 0.33823
+Structure 119
+Values of torsion before: [-126.0, -78.0, 55.0, 14.0] and after local opt: [167.52, -1.89, -1.18, 72.75]
+
+----- New trial:    120 -----
+
+Geometry of Structure 120 is added to the population, energy: 0.44208
+Structure 120
+Values of torsion before: [6.0, 100.0, -102.0, -126.0] and after local opt: [87.88, 1.16, -174.6, -97.6]
+
+----- New trial:    121 -----
+
+Geometry of Structure 121 is added to the population, energy: 0.42007
+Structure 121
+Values of torsion before: [126.0, 70.0, -104.0, 109.0] and after local opt: [89.32, 0.47, 174.02, -157.11]
+
+----- New trial:    122 -----
+
+Geometry of Structure 122 is invalid.
+
+----- New trial:    123 -----
+
+Geometry of Structure 123 is added to the population, energy: 0.41160
+Structure 123
+Values of torsion before: [87.0, 73.99, 168.0, -14.0] and after local opt: [149.05, -4.03, -178.98, -95.95]
+
+----- New trial:    124 -----
+
+Geometry of Structure 124 is added to the population, energy: 0.41933
+Structure 124
+Values of torsion before: [76.0, 75.99, 146.0, 164.0] and after local opt: [89.61, 1.99, 175.41, -157.16]
+
+----- New trial:    125 -----
+
+Geometry of Structure 125 is added to the population, energy: 0.53787
+Structure 125
+Values of torsion before: [-76.0, 98.0, 133.0, -67.0] and after local opt: [-53.71, -1.17, 178.99, -90.73]
+
+___Initialization of 3D structure completed___
+
+Total number of population (vaid structures):  100
+
+Initial population before sorting:
+ID    Energy [eV]
+    1             0.440679
+    2             0.391829
+    3             0.438042
+    4             0.415879
+    6             0.372667
+    7             0.369532
+    8             0.369549
+    9             0.683730
+   10             0.338916
+   13             0.370043
+   14             0.526358
+   15             0.378573
+   16             0.396079
+   17             0.474451
+   18             0.539645
+   19             0.437704
+   20             0.471984
+   21             0.792019
+   22             0.604899
+   23             0.422457
+   24             0.369532
+   25             0.414036
+   26             0.584544
+   27             0.416447
+   28             0.466802
+   29             0.369631
+   30             0.424569
+   31             0.372580
+   32             0.985471
+   33             0.414968
+   34             0.546071
+   35             0.462218
+   36             0.494034
+   40             0.582280
+   41             0.415441
+   42             0.413485
+   43             0.578824
+   45             0.927866
+   47             0.462183
+   48             0.351973
+   49             0.674862
+   50             0.481285
+   52             0.683730
+   53             0.469989
+   55             0.545286
+   56             0.412462
+   57             0.379254
+   58             0.457565
+   59             0.473189
+   60             0.372580
+   61             0.422271
+   62             0.545286
+   63             0.603615
+   64             0.419500
+   65             0.442162
+   66             0.463415
+   67             0.363313
+   69             0.420168
+   70             0.349523
+   71             0.828432
+   72             0.468913
+   73             0.540681
+   75             0.582280
+   77             0.440493
+   78             0.504372
+   79             0.372719
+   80             0.416625
+   81             0.823597
+   82             0.419235
+   83             0.349016
+   85             0.372580
+   86             0.455401
+   88             0.338383
+   90             0.422926
+   91             0.420536
+   92             0.526362
+   94             0.422583
+   95             0.454729
+   96             0.455965
+   97             0.422418
+   99             0.584813
+  100             0.416447
+  101             0.424578
+  102             0.369532
+  103             0.632288
+  107             0.777557
+  108             0.349016
+  110             0.338270
+  111             0.474399
+  112             0.416087
+  114             0.455327
+  115             0.369545
+  117             0.372884
+  118             0.395897
+  119             0.338231
+  120             0.442080
+  121             0.420068
+  123             0.411599
+  124             0.419327
+  125             0.537867
+
+Initial population after sorting:
+ID    Energy [eV]
+    1             0.440679
+    2             0.391829
+    3             0.438042
+    4             0.415879
+    6             0.372667
+    7             0.369532
+    8             0.369549
+    9             0.683730
+   10             0.338916
+   13             0.370043
+   14             0.526358
+   15             0.378573
+   16             0.396079
+   17             0.474451
+   18             0.539645
+   19             0.437704
+   20             0.471984
+   21             0.792019
+   22             0.604899
+   23             0.422457
+   24             0.369532
+   25             0.414036
+   26             0.584544
+   27             0.416447
+   28             0.466802
+   29             0.369631
+   30             0.424569
+   31             0.372580
+   32             0.985471
+   33             0.414968
+   34             0.546071
+   35             0.462218
+   36             0.494034
+   40             0.582280
+   41             0.415441
+   42             0.413485
+   43             0.578824
+   45             0.927866
+   47             0.462183
+   48             0.351973
+   49             0.674862
+   50             0.481285
+   52             0.683730
+   53             0.469989
+   55             0.545286
+   56             0.412462
+   57             0.379254
+   58             0.457565
+   59             0.473189
+   60             0.372580
+   61             0.422271
+   62             0.545286
+   63             0.603615
+   64             0.419500
+   65             0.442162
+   66             0.463415
+   67             0.363313
+   69             0.420168
+   70             0.349523
+   71             0.828432
+   72             0.468913
+   73             0.540681
+   75             0.582280
+   77             0.440493
+   78             0.504372
+   79             0.372719
+   80             0.416625
+   81             0.823597
+   82             0.419235
+   83             0.349016
+   85             0.372580
+   86             0.455401
+   88             0.338383
+   90             0.422926
+   91             0.420536
+   92             0.526362
+   94             0.422583
+   95             0.454729
+   96             0.455965
+   97             0.422418
+   99             0.584813
+  100             0.416447
+  101             0.424578
+  102             0.369532
+  103             0.632288
+  107             0.777557
+  108             0.349016
+  110             0.338270
+  111             0.474399
+  112             0.416087
+  114             0.455327
+  115             0.369545
+  117             0.372884
+  118             0.395897
+  119             0.338231
+  120             0.442080
+  121             0.420068
+  123             0.411599
+  124             0.419327
+  125             0.537867
+
+Finish 3D structure initialization job at  2021-02-23 01:37:35.977953
+Wall time of initialization job:                                21.64 sec.
+Start LAQA geometry optimization job at  2021-02-23 01:37:35.978014 
+
+Setting a default value for dir_inp: /data/group1/z43901k/work/laqa/laqa/newcode/examples/laqa_confopt/ala-dip-100_uff_pm6
+Setting a default value for sdf_inp: initial_structures.sdf
+Setting a default value for sdf_out: optimized_structures.sdf
+Setting a default value for csv_out: optimized_structures.csv
+Setting a default value for pool_begin: None
+Setting a default value for pool_end: None
+Setting a default value for gauss_scrdir: /data/group1/z43901k/work/laqa/laqa/newcode/examples/laqa_confopt/ala-dip-100_uff_pm6
+Setting a default value for g16_template: g16.template
+Setting a default value for xtb_call: xtb
+Setting a default value for gfn: 2
+Setting a default value for solvmethod: None
+Setting a default value for solvent: water
+input_params: {'struct_conv': 10, 'macro_opt_cycle': 200, 'micro_opt_cycle': 5, 'thr_econv': 0.0005, 'thr_fconv': 1e-06, 'print_level': 0, 'charge': 0, 'mult': 1, 'energy_function': 'g16', 'gauss_exedir': '/home/center/opt/x86_64/apps/gaussian16/c01/g16', 'qcmethod': 'pm6', 'nprocs': 20, 'memory': '2GB', 'dir_inp': '/data/group1/z43901k/work/laqa/laqa/newcode/examples/laqa_confopt/ala-dip-100_uff_pm6', 'sdf_inp': 'initial_structures.sdf', 'sdf_out': 'optimized_structures.sdf', 'csv_out': 'optimized_structures.csv', 'pool_begin': None, 'pool_end': None, 'gauss_scrdir': '/data/group1/z43901k/work/laqa/laqa/newcode/examples/laqa_confopt/ala-dip-100_uff_pm6', 'g16_template': 'g16.template', 'xtb_call': 'xtb', 'gfn': '2', 'solvmethod': None, 'solvent': 'water'}
+len(mols):  100
+
+<LAQA options>
+struct_conv: 10
+pool_begin: 1 pool_end: 100
+macro_opt_cycle: 200
+thr_econv: 0.0005 thr_econv: 1e-06
+print_level: 0
+energy_function:  g16
+gauss_exedir; /home/center/opt/x86_64/apps/gaussian16/c01/g16 g16_template: g16.template
+<Input file information>
+Input file dir:  /data/group1/z43901k/work/laqa/laqa/newcode/examples/laqa_confopt/ala-dip-100_uff_pm6  Input SDF file:  initial_structures.sdf
+<Output file information>
+Output file dir:  /data/group1/z43901k/work/laqa/laqa/newcode/examples/laqa_confopt/ala-dip-100_uff_pm6  Output SDF file:  optimized_structures.sdf
+
+Structure data
+Number of structures:  100 Number of atoms:  22
+
+Start initialization of LAQA geometry optimization
+
+LAQA initialization: ID      0
+Energy:      -4.1321306
+MAE force:  2.17351310e-02 RMS force:  3.03144665e-02 Max force:     0.061476292
+E: -4.132130609648955 F: 0.021735131037574233 dF: 1.0 score: -0.18806032658101735
+LAQA initialization: ID      1
+Energy:      -3.9838007
+MAE force:  2.39823297e-02 RMS force:  3.36603312e-02 Max force:     0.074986105
+E: -3.9838006852036862 F: 0.023982329737059993 dF: 1.0 score: -0.18136942539724882
+LAQA initialization: ID      2
+Energy:      -4.1451617
+MAE force:  2.17530792e-02 RMS force:  3.03219205e-02 Max force:     0.062486496
+E: -4.145161709888952 F: 0.02175307915298101 dF: 1.0 score: -0.18865303958490667
+LAQA initialization: ID      3
+Energy:      -4.0060848
+MAE force:  2.24622698e-02 RMS force:  3.19252630e-02 Max force:     0.077756435
+E: -4.006084833256392 F: 0.022462269764616252 dF: 1.0 score: -0.18234704192950704
+LAQA initialization: ID      4
+Energy:      -3.9616768
+MAE force:  2.25927460e-02 RMS force:  3.24704545e-02 Max force:     0.080772221
+E: -3.961676767125372 F: 0.022592745997166815 dF: 1.0 score: -0.18033143277336317
+LAQA initialization: ID      5
+Energy:      -4.1178045
+MAE force:  2.21182648e-02 RMS force:  3.13243646e-02 Max force:     0.075267711
+E: -4.117804527738893 F: 0.022118264831483738 dF: 1.0 score: -0.18741754189861842
+LAQA initialization: ID      6
+Energy:       -4.118225
+MAE force:  2.21024534e-02 RMS force:  3.13197359e-02 Max force:     0.075343728
+E: -4.118224993721853 F: 0.022102453359637685 dF: 1.0 score: -0.18743630439143263
+LAQA initialization: ID      7
+Energy:      -3.9131275
+MAE force:  2.00347262e-02 RMS force:  2.87087674e-02 Max force:     0.064877171
+E: -3.9131275464715896 F: 0.02003472616913267 dF: 1.0 score: -0.17807012905686287
+LAQA initialization: ID      8
+Energy:      -3.9455252
+MAE force:  2.42840354e-02 RMS force:  3.42480146e-02 Max force:     0.078877862
+E: -3.945525222119087 F: 0.024284035358469205 dF: 1.0 score: -0.17963691273751328
+LAQA initialization: ID      9
+Energy:      -4.1176496
+MAE force:  2.20877135e-02 RMS force:  3.13100860e-02 Max force:      0.07533119
+E: -4.117649593970986 F: 0.022087713490432898 dF: 1.0 score: -0.18740982417866256
+LAQA initialization: ID     10
+Energy:      -3.7384544
+MAE force:  2.30037658e-02 RMS force:  3.31620790e-02 Max force:      0.07423055
+E: -3.7384543560653127 F: 0.02300376579185609 dF: 1.0 score: -0.1701943300778175
+LAQA initialization: ID     11
+Energy:      -4.0668752
+MAE force:  2.30713083e-02 RMS force:  3.24585210e-02 Max force:     0.073986733
+E: -4.066875193981106 F: 0.02307130831706242 dF: 1.0 score: -0.18512410599650805
+LAQA initialization: ID     12
+Energy:      -4.0367477
+MAE force:  2.20157192e-02 RMS force:  3.10283388e-02 Max force:     0.066645218
+E: -4.036747660430609 F: 0.02201571919622796 dF: 1.0 score: -0.18373087596543672
+LAQA initialization: ID     13
+Energy:      -3.7042028
+MAE force:  2.44690684e-02 RMS force:  3.50012692e-02 Max force:      0.08293675
+E: -3.704202753939702 F: 0.024469068367280335 dF: 1.0 score: -0.16867222010518595
+LAQA initialization: ID     14
+Energy:      -3.9827428
+MAE force:  2.14430088e-02 RMS force:  3.10023007e-02 Max force:      0.07473705
+E: -3.9827428212656435 F: 0.02144300881814794 dF: 1.0 score: -0.18126366591657136
+LAQA initialization: ID     15
+Energy:      -4.1436503
+MAE force:  2.17484564e-02 RMS force:  3.03095001e-02 Max force:     0.062406621
+E: -4.143650315548855 F: 0.021748456413423854 dF: 1.0 score: -0.18858423929404033
+LAQA initialization: ID     16
+Energy:      -4.0275529
+MAE force:  2.11197632e-02 RMS force:  2.98308272e-02 Max force:     0.066069245
+E: -4.027552889120851 F: 0.02111976318993708 dF: 1.0 score: -0.1832936080677291
+LAQA initialization: ID     17
+Energy:      -3.5242005
+MAE force:  2.20744563e-02 RMS force:  3.15107151e-02 Max force:      0.08108422
+E: -3.524200511763776 F: 0.022074456287748814 dF: 1.0 score: -0.16043457316309878
+LAQA initialization: ID     18
+Energy:      -3.8909724
+MAE force:  2.15438097e-02 RMS force:  3.04556461e-02 Max force:     0.069842958
+E: -3.890972375871528 F: 0.021543809716042462 dF: 1.0 score: -0.1770944485899736
+LAQA initialization: ID     19
+Energy:      -3.7498246
+MAE force:  2.44863121e-02 RMS force:  3.54047943e-02 Max force:     0.084379776
+E: -3.7498245785018676 F: 0.024486312095763626 dF: 1.0 score: -0.17074636149011047
+LAQA initialization: ID     20
+Energy:      -4.1179599
+MAE force:  2.21119641e-02 RMS force:  3.13185111e-02 Max force:     0.075202503
+E: -4.117959931012056 F: 0.022111964080051724 dF: 1.0 score: -0.1874244663419231
+LAQA initialization: ID     21
+Energy:      -3.9788265
+MAE force:  2.13693820e-02 RMS force:  3.04627210e-02 Max force:     0.068798481
+E: -3.9788264642477698 F: 0.021369382027418393 dF: 1.0 score: -0.1810840736190155
+LAQA initialization: ID     22
+Energy:      -3.9962116
+MAE force:  2.01477701e-02 RMS force:  2.88975375e-02 Max force:     0.063153605
+E: -3.9962115753700997 F: 0.020147770147237606 dF: 1.0 score: -0.18184894701959387
+LAQA initialization: ID     23
+Energy:      -4.0324717
+MAE force:  2.23650087e-02 RMS force:  3.15896812e-02 Max force:     0.075035797
+E: -4.032471684864477 F: 0.022365008660267846 dF: 1.0 score: -0.18354426430002682
+LAQA initialization: ID     24
+Energy:      -3.7305832
+MAE force:  2.42551843e-02 RMS force:  3.49046904e-02 Max force:     0.082696575
+E: -3.730583198354835 F: 0.024255184324919722 dF: 1.0 score: -0.16986612054490133
+LAQA initialization: ID     25
+Energy:      -4.1176371
+MAE force:  2.21080807e-02 RMS force:  3.13105875e-02 Max force:     0.075232135
+E: -4.11763714726533 F: 0.022108080671782535 dF: 1.0 score: -0.18740970849119185
+LAQA initialization: ID     26
+Energy:      -3.7846158
+MAE force:  2.44391783e-02 RMS force:  3.54076795e-02 Max force:     0.083856518
+E: -3.784615821351748 F: 0.024439178333298738 dF: 1.0 score: -0.17232662859842832
+LAQA initialization: ID     27
+Energy:      -3.9621454
+MAE force:  2.25969257e-02 RMS force:  3.24955606e-02 Max force:     0.080991115
+E: -3.9621454234661506 F: 0.02259692566267162 dF: 1.0 score: -0.18035282977316355
+LAQA initialization: ID     28
+Energy:      -3.4484681
+MAE force:  2.17771150e-02 RMS force:  3.14669328e-02 Max force:     0.076395024
+E: -3.4484680685479883 F: 0.021777114998627226 dF: 1.0 score: -0.15698566993919483
+LAQA initialization: ID     29
+Energy:      -4.0008146
+MAE force:  2.24541345e-02 RMS force:  3.19697507e-02 Max force:     0.077879735
+E: -4.000814643905258 F: 0.022454134532094102 dF: 1.0 score: -0.18210730516539536
+LAQA initialization: ID     30
+Energy:      -3.9995325
+MAE force:  2.11925181e-02 RMS force:  3.06664945e-02 Max force:     0.073785344
+E: -3.9995325349895205 F: 0.021192518126616947 dF: 1.0 score: -0.18202149482088809
+LAQA initialization: ID     31
+Energy:      -3.7609099
+MAE force:  2.41027256e-02 RMS force:  3.46625066e-02 Max force:     0.081667082
+E: -3.7609099182986006 F: 0.024102725649466503 dF: 1.0 score: -0.1712409215236213
+LAQA initialization: ID     32
+Energy:      -3.9852108
+MAE force:  2.19322601e-02 RMS force:  3.10675200e-02 Max force:     0.066966635
+E: -3.9852107518253765 F: 0.02193226012962283 dF: 1.0 score: -0.18138645528198657
+LAQA initialization: ID     33
+Energy:      -3.9936638
+MAE force:  2.02878614e-02 RMS force:  2.90727535e-02 Max force:     0.063565663
+E: -3.9936637696235104 F: 0.020287861435168367 dF: 1.0 score: -0.18173597000732952
+LAQA initialization: ID     34
+Energy:      -4.0043148
+MAE force:  2.24593686e-02 RMS force:  3.19485904e-02 Max force:     0.077669115
+E: -4.004314761113323 F: 0.022459368648165626 dF: 1.0 score: -0.18226651894336998
+LAQA initialization: ID     35
+Energy:      -3.9814955
+MAE force:  2.13578075e-02 RMS force:  3.05149919e-02 Max force:      0.06894994
+E: -3.9814955156037803 F: 0.02135780752677185 dF: 1.0 score: -0.18120514686225625
+LAQA initialization: ID     36
+Energy:      -3.8866672
+MAE force:  2.16034269e-02 RMS force:  3.09009770e-02 Max force:     0.074767717
+E: -3.8866671926104646 F: 0.021603426868861884 dF: 1.0 score: -0.17690004459944209
+LAQA initialization: ID     37
+Energy:      -3.5355797
+MAE force:  2.06763662e-02 RMS force:  2.87113998e-02 Max force:     0.074741298
+E: -3.535579666637117 F: 0.02067636622359629 dF: 1.0 score: -0.16092192272542963
+LAQA initialization: ID     38
+Energy:      -3.7577695
+MAE force:  2.41606125e-02 RMS force:  3.47178868e-02 Max force:     0.081800202
+E: -3.7577694636668144 F: 0.024160612514082823 dF: 1.0 score: -0.17109957049247396
+LAQA initialization: ID     39
+Energy:      -4.0044131
+MAE force:  2.31453339e-02 RMS force:  3.28297524e-02 Max force:     0.078450534
+E: -4.004413107252954 F: 0.023145333866332263 dF: 1.0 score: -0.18228663084229896
+LAQA initialization: ID     40
+Energy:      -3.9520571
+MAE force:  2.17854098e-02 RMS force:  3.09849650e-02 Max force:     0.066333693
+E: -3.952057107410987 F: 0.021785409829608134 dF: 1.0 score: -0.17987626146849414
+LAQA initialization: ID     41
+Energy:      -4.0322347
+MAE force:  2.26872345e-02 RMS force:  3.20001816e-02 Max force:     0.072515176
+E: -4.032234685284294 F: 0.02268723447835657 dF: 1.0 score: -0.18354075008978768
+LAQA initialization: ID     42
+Energy:       -3.913297
+MAE force:  2.00318487e-02 RMS force:  2.86997822e-02 Max force:     0.064879327
+E: -3.913297028099536 F: 0.020031848738587973 dF: 1.0 score: -0.17807777512283082
+LAQA initialization: ID     43
+Energy:      -3.7512072
+MAE force:  2.50700564e-02 RMS force:  3.57799491e-02 Max force:     0.083872891
+E: -3.7512071728347687 F: 0.025070056445805934 dF: 1.0 score: -0.1708236708121329
+LAQA initialization: ID     44
+Energy:      -3.9992002
+MAE force:  2.13004665e-02 RMS force:  3.07882491e-02 Max force:     0.073882142
+E: -3.9992002426865443 F: 0.021300466542720744 dF: 1.0 score: -0.18200868415049354
+LAQA initialization: ID     45
+Energy:      -3.9397682
+MAE force:  2.41059830e-02 RMS force:  3.36877234e-02 Max force:     0.073244499
+E: -3.939768164771697 F: 0.024105982986662697 dF: 1.0 score: -0.17937092033386287
+LAQA initialization: ID     46
+Energy:      -4.0727883
+MAE force:  2.31173043e-02 RMS force:  3.24335663e-02 Max force:     0.074083259
+E: -4.072788302395914 F: 0.023117304270005346 dF: 1.0 score: -0.18539394589635208
+LAQA initialization: ID     47
+Energy:      -3.7515831
+MAE force:  2.32546500e-02 RMS force:  3.36376867e-02 Max force:     0.073514822
+E: -3.7515831084457503 F: 0.02325464995132839 dF: 1.0 score: -0.1707968943015317
+LAQA initialization: ID     48
+Energy:      -3.9122292
+MAE force:  2.24777671e-02 RMS force:  3.18751271e-02 Max force:     0.066063203
+E: -3.9122291789161823 F: 0.02247776707471558 dF: 1.0 score: -0.17808122404797724
+LAQA initialization: ID     49
+Energy:      -3.9619837
+MAE force:  2.26136352e-02 RMS force:  3.25014528e-02 Max force:     0.080961351
+E: -3.961983703232993 F: 0.0226136352235313 dF: 1.0 score: -0.18034585657778388
+LAQA initialization: ID     50
+Energy:      -3.7562696
+MAE force:  2.44788941e-02 RMS force:  3.53632838e-02 Max force:     0.084090241
+E: -3.756269563035212 F: 0.024478894120584602 dF: 1.0 score: -0.17103913372119303
+LAQA initialization: ID     51
+Energy:      -3.9997745
+MAE force:  2.12899634e-02 RMS force:  3.07600208e-02 Max force:     0.073884241
+E: -3.9997744638306476 F: 0.02128996344797953 dF: 1.0 score: -0.18203456144592853
+LAQA initialization: ID     52
+Energy:      -4.0700225
+MAE force:  2.10805508e-02 RMS force:  2.90632272e-02 Max force:     0.060807263
+E: -4.070022472466587 F: 0.02108055078890856 dF: 1.0 score: -0.18522321628653585
+LAQA initialization: ID     53
+Energy:      -4.0727879
+MAE force:  2.21966390e-02 RMS force:  3.12957368e-02 Max force:     0.064985393
+E: -4.072787885626325 F: 0.022196639046369846 dF: 1.0 score: -0.18537306746640128
+LAQA initialization: ID     54
+Energy:       -3.972363
+MAE force:  2.32912393e-02 RMS force:  3.34053003e-02 Max force:     0.080435729
+E: -3.9723629927069335 F: 0.023291239272680987 dF: 1.0 score: -0.18083319512738016
+LAQA initialization: ID     55
+Energy:       -3.750598
+MAE force:  2.42421141e-02 RMS force:  3.48548900e-02 Max force:     0.082094716
+E: -3.7505979552359507 F: 0.024242114148360604 dF: 1.0 score: -0.17077556528718885
+LAQA initialization: ID     56
+Energy:      -4.0909568
+MAE force:  2.32097040e-02 RMS force:  3.28574710e-02 Max force:     0.077064764
+E: -4.090956780395687 F: 0.02320970397595507 dF: 1.0 score: -0.18622192610640242
+LAQA initialization: ID     57
+Energy:      -3.9921437
+MAE force:  2.25247729e-02 RMS force:  3.20439857e-02 Max force:     0.078831669
+E: -3.9921436752046513 F: 0.02252477294183153 dF: 1.0 score: -0.1817147588437065
+LAQA initialization: ID     58
+Energy:      -4.0271144
+MAE force:  2.31288542e-02 RMS force:  3.28446552e-02 Max force:     0.078607458
+E: -4.0271143590497624 F: 0.023128854220367204 dF: 1.0 score: -0.1833181246328536
+LAQA initialization: ID     59
+Energy:       -3.697526
+MAE force:  2.29156144e-02 RMS force:  3.16617579e-02 Max force:     0.071066312
+E: -3.6975260181950405 F: 0.02291561439289772 dF: 1.0 score: -0.16833192715491294
+LAQA initialization: ID     60
+Energy:      -3.9049139
+MAE force:  2.25481177e-02 RMS force:  3.20841614e-02 Max force:     0.067020214
+E: -3.9049138916713617 F: 0.022548117713292716 dF: 1.0 score: -0.17775029479126814
+LAQA initialization: ID     61
+Energy:      -3.9046657
+MAE force:  2.31242299e-02 RMS force:  3.22250259e-02 Max force:     0.071396858
+E: -3.904665732701771 F: 0.02312422985267174 dF: 1.0 score: -0.17775217103503826
+LAQA initialization: ID     62
+Energy:      -3.9941004
+MAE force:  2.02750225e-02 RMS force:  2.90599185e-02 Max force:      0.06358861
+E: -3.9941003669514843 F: 0.020275022454865562 dF: 1.0 score: -0.18175555494738557
+LAQA initialization: ID     63
+Energy:      -4.1309032
+MAE force:  2.18215011e-02 RMS force:  3.04857968e-02 Max force:     0.062206934
+E: -4.130903188244832 F: 0.021821501122369573 dF: 1.0 score: -0.18800641569401824
+LAQA initialization: ID     64
+Energy:      -4.0802545
+MAE force:  2.06814000e-02 RMS force:  2.92549420e-02 Max force:     0.061809003
+E: -4.08025453204254 F: 0.020681400043925664 dF: 1.0 score: -0.18567997524673116
+LAQA initialization: ID     65
+Energy:      -3.9616457
+MAE force:  2.26344243e-02 RMS force:  3.25130077e-02 Max force:     0.080933747
+E: -3.961645743669073 F: 0.022634424289695323 dF: 1.0 score: -0.18033096511187538
+LAQA initialization: ID     66
+Energy:      -4.0068916
+MAE force:  2.24307634e-02 RMS force:  3.18810794e-02 Max force:     0.077526986
+E: -4.006891620293499 F: 0.022430763425218245 dF: 1.0 score: -0.18238300685998718
+LAQA initialization: ID     67
+Energy:      -3.8612105
+MAE force:  2.10483538e-02 RMS force:  2.96346079e-02 Max force:     0.067946777
+E: -3.8612105155659457 F: 0.02104835384178029 dF: 1.0 score: -0.17573108548908556
+LAQA initialization: ID     68
+Energy:      -4.0766658
+MAE force:  2.22026150e-02 RMS force:  3.12720456e-02 Max force:     0.065088837
+E: -4.076665843487296 F: 0.02220261499556493 dF: 1.0 score: -0.18554947094210683
+LAQA initialization: ID     69
+Energy:      -4.0169005
+MAE force:  2.31521117e-02 RMS force:  3.28461732e-02 Max force:     0.078523932
+E: -4.016900470747588 F: 0.02315211171826468 dF: 1.0 score: -0.18285439517248878
+LAQA initialization: ID     70
+Energy:      -3.9619315
+MAE force:  2.26084734e-02 RMS force:  3.25106207e-02 Max force:     0.080982823
+E: -3.9619315231417547 F: 0.022608473433367793 dF: 1.0 score: -0.18034336804193707
+LAQA initialization: ID     71
+Energy:      -3.7636125
+MAE force:  2.31216072e-02 RMS force:  3.34428944e-02 Max force:     0.072552889
+E: -3.7636125348720557 F: 0.02312160724806145 dF: 1.0 score: -0.1713406014005057
+LAQA initialization: ID     72
+Energy:      -3.9471617
+MAE force:  2.42247254e-02 RMS force:  3.41908164e-02 Max force:     0.078728759
+E: -3.94716169642501 F: 0.024224725405778334 dF: 1.0 score: -0.17970985940708406
+LAQA initialization: ID     73
+Energy:      -3.9697967
+MAE force:  2.31411452e-02 RMS force:  3.26441448e-02 Max force:     0.079036607
+E: -3.9697966775034597 F: 0.0231411452252163 dF: 1.0 score: -0.1807130598240518
+LAQA initialization: ID     74
+Energy:      -4.0990423
+MAE force:  2.21217020e-02 RMS force:  3.11511004e-02 Max force:     0.065266131
+E: -4.0990423351744125 F: 0.022121701961083234 dF: 1.0 score: -0.18656479099311898
+LAQA initialization: ID     75
+Energy:      -3.7383703
+MAE force:  2.29934503e-02 RMS force:  3.31383756e-02 Max force:     0.074057071
+E: -3.738370327740665 F: 0.02299345031331893 dF: 1.0 score: -0.17019027336686757
+LAQA initialization: ID     76
+Energy:      -3.7497471
+MAE force:  2.44781450e-02 RMS force:  3.53282462e-02 Max force:     0.084299063
+E: -3.749747137836084 F: 0.02447814502754296 dF: 1.0 score: -0.17074264151181673
+LAQA initialization: ID     77
+Energy:      -4.0665497
+MAE force:  2.25240272e-02 RMS force:  3.12828282e-02 Max force:     0.068299969
+E: -4.066549745314502 F: 0.022524027188812416 dF: 1.0 score: -0.18509683614196945
+LAQA initialization: ID     78
+Energy:      -3.7609617
+MAE force:  2.31548327e-02 RMS force:  3.34666110e-02 Max force:     0.072667421
+E: -3.7609617252945253 F: 0.023154832705409377 dF: 1.0 score: -0.17122087883401346
+LAQA initialization: ID     79
+Energy:      -3.7526369
+MAE force:  2.44615975e-02 RMS force:  3.53805783e-02 Max force:     0.084342503
+E: -3.752636922730903 F: 0.02446159749361121 dF: 1.0 score: -0.17087359045464715
+LAQA initialization: ID     80
+Energy:      -3.8957366
+MAE force:  2.13938912e-02 RMS force:  3.06295664e-02 Max force:     0.075528294
+E: -3.895736635514443 F: 0.021393891177063806 dF: 1.0 score: -0.17730778726777727
+LAQA initialization: ID     81
+Energy:      -4.0328297
+MAE force:  2.23538056e-02 RMS force:  3.15657245e-02 Max force:     0.074977935
+E: -4.032829687600633 F: 0.022353805641735815 dF: 1.0 score: -0.18356028665881757
+LAQA initialization: ID     82
+Energy:       -3.720219
+MAE force:  2.48061344e-02 RMS force:  3.57253262e-02 Max force:     0.084907613
+E: -3.7202189946284014 F: 0.024806134391927182 dF: 1.0 score: -0.16940853554393526
+LAQA initialization: ID     83
+Energy:       -4.117843
+MAE force:  2.21180924e-02 RMS force:  3.13228784e-02 Max force:     0.075258542
+E: -4.117843035333169 F: 0.022118092446657498 dF: 1.0 score: -0.1874192884309744
+LAQA initialization: ID     84
+Energy:      -3.9116634
+MAE force:  2.24029641e-02 RMS force:  3.18051934e-02 Max force:     0.068065254
+E: -3.9116633519948603 F: 0.022402964073734166 dF: 1.0 score: -0.17805382603577452
+LAQA initialization: ID     85
+Energy:      -3.7950684
+MAE force:  2.17359669e-02 RMS force:  3.16698213e-02 Max force:      0.07752627
+E: -3.7950684351706867 F: 0.021735966859958246 dF: 1.0 score: -0.17273933681724526
+LAQA initialization: ID     86
+Energy:      -4.0170337
+MAE force:  2.31517715e-02 RMS force:  3.28448677e-02 Max force:     0.078462364
+E: -4.017033695054038 F: 0.02315177153884641 dF: 1.0 score: -0.18286044294696793
+LAQA initialization: ID     87
+Energy:      -3.9499141
+MAE force:  2.42099814e-02 RMS force:  3.41655536e-02 Max force:     0.078485229
+E: -3.949914112855345 F: 0.02420998144060146 dF: 1.0 score: -0.179834612185011
+LAQA initialization: ID     88
+Energy:      -4.0126295
+MAE force:  2.15343117e-02 RMS force:  3.03977502e-02 Max force:     0.066644274
+E: -4.012629549750834 F: 0.021534311715350703 dF: 1.0 score: -0.18262411555192848
+LAQA initialization: ID     89
+Energy:       -4.002649
+MAE force:  2.25407497e-02 RMS force:  3.20512620e-02 Max force:     0.077846828
+E: -4.002648980253503 F: 0.022540749665823073 dF: 1.0 score: -0.18219263270927152
+LAQA initialization: ID     90
+Energy:      -3.7627428
+MAE force:  2.31154481e-02 RMS force:  3.34464236e-02 Max force:     0.072602038
+E: -3.7627428089331176 F: 0.023115448125274964 dF: 1.0 score: -0.17130092601343058
+LAQA initialization: ID     91
+Energy:      -4.1175562
+MAE force:  2.21285224e-02 RMS force:  3.13407190e-02 Max force:     0.075263667
+E: -4.11755615981307 F: 0.022128522398431643 dF: 1.0 score: -0.18740647937963578
+LAQA initialization: ID     92
+Energy:      -4.0039568
+MAE force:  2.35021534e-02 RMS force:  3.30063595e-02 Max force:      0.07269151
+E: -4.003956781071464 F: 0.023502153350691047 dF: 1.0 score: -0.18227421110930805
+LAQA initialization: ID     93
+Energy:      -4.0378652
+MAE force:  2.19656583e-02 RMS force:  3.09914948e-02 Max force:     0.066797944
+E: -4.037865150665195 F: 0.021965658329927338 dF: 1.0 score: -0.1837805701031697
+LAQA initialization: ID     94
+Energy:      -3.9489027
+MAE force:  2.42114887e-02 RMS force:  3.41760896e-02 Max force:     0.078546959
+E: -3.948902658208273 F: 0.024211488735069356 dF: 1.0 score: -0.17978867346648753
+LAQA initialization: ID     95
+Energy:      -4.1301917
+MAE force:  2.17258788e-02 RMS force:  3.02507999e-02 Max force:     0.061644738
+E: -4.130191712543107 F: 0.021725878759336962 dF: 1.0 score: -0.18797199383771032
+LAQA initialization: ID     96
+Energy:      -4.0718581
+MAE force:  2.22601536e-02 RMS force:  3.12886662e-02 Max force:     0.064829863
+E: -4.0718580869880565 F: 0.022260153555245788 dF: 1.0 score: -0.1853322157176087
+LAQA initialization: ID     97
+Energy:      -4.1195227
+MAE force:  2.20206382e-02 RMS force:  3.10059840e-02 Max force:     0.066206703
+E: -4.119522650815391 F: 0.02202063819550703 dF: 1.0 score: -0.18749348383578648
+LAQA initialization: ID     98
+Energy:      -4.0791018
+MAE force:  2.22068612e-02 RMS force:  3.12515692e-02 Max force:     0.064923129
+E: -4.079101819063353 F: 0.022206861211369694 dF: 1.0 score: -0.18566029139076476
+LAQA initialization: ID     99
+Energy:      -3.7253654
+MAE force:  2.31110527e-02 RMS force:  3.30574749e-02 Max force:     0.072293664
+E: -3.725365449861651 F: 0.023111052662879585 dF: 1.0 score: -0.1696018535531228
+
+End initialization of LAQA geometry optimization
+
+
+Summary of initialization of LAQA optimization
+[ image]           score           energy[au]        MAE force[au]
+[     0]     -0.18806033        -4.1321306096         0.0217351310
+[     1]     -0.18136943        -3.9838006852         0.0239823297
+[     2]     -0.18865304        -4.1451617099         0.0217530792
+[     3]     -0.18234704        -4.0060848333         0.0224622698
+[     4]     -0.18033143        -3.9616767671         0.0225927460
+[     5]     -0.18741754        -4.1178045277         0.0221182648
+[     6]     -0.18743630        -4.1182249937         0.0221024534
+[     7]     -0.17807013        -3.9131275465         0.0200347262
+[     8]     -0.17963691        -3.9455252221         0.0242840354
+[     9]     -0.18740982        -4.1176495940         0.0220877135
+[    10]     -0.17019433        -3.7384543561         0.0230037658
+[    11]     -0.18512411        -4.0668751940         0.0230713083
+[    12]     -0.18373088        -4.0367476604         0.0220157192
+[    13]     -0.16867222        -3.7042027539         0.0244690684
+[    14]     -0.18126367        -3.9827428213         0.0214430088
+[    15]     -0.18858424        -4.1436503155         0.0217484564
+[    16]     -0.18329361        -4.0275528891         0.0211197632
+[    17]     -0.16043457        -3.5242005118         0.0220744563
+[    18]     -0.17709445        -3.8909723759         0.0215438097
+[    19]     -0.17074636        -3.7498245785         0.0244863121
+[    20]     -0.18742447        -4.1179599310         0.0221119641
+[    21]     -0.18108407        -3.9788264642         0.0213693820
+[    22]     -0.18184895        -3.9962115754         0.0201477701
+[    23]     -0.18354426        -4.0324716849         0.0223650087
+[    24]     -0.16986612        -3.7305831984         0.0242551843
+[    25]     -0.18740971        -4.1176371473         0.0221080807
+[    26]     -0.17232663        -3.7846158214         0.0244391783
+[    27]     -0.18035283        -3.9621454235         0.0225969257
+[    28]     -0.15698567        -3.4484680685         0.0217771150
+[    29]     -0.18210731        -4.0008146439         0.0224541345
+[    30]     -0.18202149        -3.9995325350         0.0211925181
+[    31]     -0.17124092        -3.7609099183         0.0241027256
+[    32]     -0.18138646        -3.9852107518         0.0219322601
+[    33]     -0.18173597        -3.9936637696         0.0202878614
+[    34]     -0.18226652        -4.0043147611         0.0224593686
+[    35]     -0.18120515        -3.9814955156         0.0213578075
+[    36]     -0.17690004        -3.8866671926         0.0216034269
+[    37]     -0.16092192        -3.5355796666         0.0206763662
+[    38]     -0.17109957        -3.7577694637         0.0241606125
+[    39]     -0.18228663        -4.0044131073         0.0231453339
+[    40]     -0.17987626        -3.9520571074         0.0217854098
+[    41]     -0.18354075        -4.0322346853         0.0226872345
+[    42]     -0.17807778        -3.9132970281         0.0200318487
+[    43]     -0.17082367        -3.7512071728         0.0250700564
+[    44]     -0.18200868        -3.9992002427         0.0213004665
+[    45]     -0.17937092        -3.9397681648         0.0241059830
+[    46]     -0.18539395        -4.0727883024         0.0231173043
+[    47]     -0.17079689        -3.7515831084         0.0232546500
+[    48]     -0.17808122        -3.9122291789         0.0224777671
+[    49]     -0.18034586        -3.9619837032         0.0226136352
+[    50]     -0.17103913        -3.7562695630         0.0244788941
+[    51]     -0.18203456        -3.9997744638         0.0212899634
+[    52]     -0.18522322        -4.0700224725         0.0210805508
+[    53]     -0.18537307        -4.0727878856         0.0221966390
+[    54]     -0.18083320        -3.9723629927         0.0232912393
+[    55]     -0.17077557        -3.7505979552         0.0242421141
+[    56]     -0.18622193        -4.0909567804         0.0232097040
+[    57]     -0.18171476        -3.9921436752         0.0225247729
+[    58]     -0.18331812        -4.0271143590         0.0231288542
+[    59]     -0.16833193        -3.6975260182         0.0229156144
+[    60]     -0.17775029        -3.9049138917         0.0225481177
+[    61]     -0.17775217        -3.9046657327         0.0231242299
+[    62]     -0.18175555        -3.9941003670         0.0202750225
+[    63]     -0.18800642        -4.1309031882         0.0218215011
+[    64]     -0.18567998        -4.0802545320         0.0206814000
+[    65]     -0.18033097        -3.9616457437         0.0226344243
+[    66]     -0.18238301        -4.0068916203         0.0224307634
+[    67]     -0.17573109        -3.8612105156         0.0210483538
+[    68]     -0.18554947        -4.0766658435         0.0222026150
+[    69]     -0.18285440        -4.0169004707         0.0231521117
+[    70]     -0.18034337        -3.9619315231         0.0226084734
+[    71]     -0.17134060        -3.7636125349         0.0231216072
+[    72]     -0.17970986        -3.9471616964         0.0242247254
+[    73]     -0.18071306        -3.9697966775         0.0231411452
+[    74]     -0.18656479        -4.0990423352         0.0221217020
+[    75]     -0.17019027        -3.7383703277         0.0229934503
+[    76]     -0.17074264        -3.7497471378         0.0244781450
+[    77]     -0.18509684        -4.0665497453         0.0225240272
+[    78]     -0.17122088        -3.7609617253         0.0231548327
+[    79]     -0.17087359        -3.7526369227         0.0244615975
+[    80]     -0.17730779        -3.8957366355         0.0213938912
+[    81]     -0.18356029        -4.0328296876         0.0223538056
+[    82]     -0.16940854        -3.7202189946         0.0248061344
+[    83]     -0.18741929        -4.1178430353         0.0221180924
+[    84]     -0.17805383        -3.9116633520         0.0224029641
+[    85]     -0.17273934        -3.7950684352         0.0217359669
+[    86]     -0.18286044        -4.0170336951         0.0231517715
+[    87]     -0.17983461        -3.9499141129         0.0242099814
+[    88]     -0.18262412        -4.0126295498         0.0215343117
+[    89]     -0.18219263        -4.0026489803         0.0225407497
+[    90]     -0.17130093        -3.7627428089         0.0231154481
+[    91]     -0.18740648        -4.1175561598         0.0221285224
+[    92]     -0.18227421        -4.0039567811         0.0235021534
+[    93]     -0.18378057        -4.0378651507         0.0219656583
+[    94]     -0.17978867        -3.9489026582         0.0242114887
+[    95]     -0.18797199        -4.1301917125         0.0217258788
+[    96]     -0.18533222        -4.0718580870         0.0222601536
+[    97]     -0.18749348        -4.1195226508         0.0220206382
+[    98]     -0.18566029        -4.0791018191         0.0222068612
+[    99]     -0.16960185        -3.7253654499         0.0231110527
+
+LAQA geometry optimization:      0 cycle 
+Energy:      -4.5545796
+MAE force:  9.19955663e-04 RMS force:  1.17726853e-03 Max force:    0.0027866423
+E: -4.554579634391873 F: 0.0009199556626896887 dF: 0.020833123490291323 score: -0.20704665886451434
+Cycle      0 [     2,     1]     -0.20704666        -4.5545796344         0.0009199557
+
+LAQA geometry optimization:      1 cycle 
+Energy:      -4.5585431
+MAE force:  5.17184688e-04 RMS force:  7.40391405e-04 Max force:    0.0022509643
+E: -4.558543116441803 F: 0.0005171846875564157 dF: 0.00040277097513327295 score: -0.20753855504013066
+Cycle      1 [     2,     2]     -0.20753856        -4.5585431164         0.0005171847
+
+LAQA geometry optimization:      2 cycle 
+Energy:      -4.5592006
+MAE force:  1.95246119e-04 RMS force:  2.78686201e-04 Max force:   0.00083292395
+E: -4.559200567991083 F: 0.00019524611883946203 dF: 0.0003219385687169537 score: -0.2072955949216208
+Cycle      2 [     2,     3]     -0.20729559        -4.5592005680         0.0001952461
+
+LAQA geometry optimization:      3 cycle 
+Energy:      -4.5593839
+MAE force:  1.32177185e-04 RMS force:  1.91829751e-04 Max force:   0.00053546437
+E: -4.559383852839491 F: 0.00013217718463301935 dF: 6.306893420644267e-05 score: -0.20738322623903088
+Cycle      3 [     2,     4]     -0.20738323        -4.5593838528         0.0001321772
+LAQA local geometry optpmization is converged: structure ID      3
+
+LAQA geometry optimization:      4 cycle 
+Energy:      -4.5537953
+MAE force:  8.19584716e-04 RMS force:  1.04261586e-03 Max force:    0.0025052601
+E: -4.553795274053936 F: 0.0008195847164130919 dF: 0.020928871697010763 score: -0.20700674194170157
+Cycle      4 [    15,     1]     -0.20700674        -4.5537952741         0.0008195847
+
+LAQA geometry optimization:      5 cycle 
+Energy:      -4.5579362
+MAE force:  5.98660744e-04 RMS force:  8.36067988e-04 Max force:    0.0025411186
+E: -4.557936215946927 F: 0.0005986607440561961 dF: 0.00022092397235689578 score: -0.2079900456546055
+Cycle      5 [    15,     2]     -0.20799005        -4.5579362159         0.0005986607
+
+LAQA geometry optimization:      6 cycle 
+Energy:      -4.5589997
+MAE force:  1.88606076e-04 RMS force:  2.71497212e-04 Max force:   0.00079146032
+E: -4.558999720397121 F: 0.00018860607648894315 dF: 0.00041005466756725297 score: -0.2072706350298507
+Cycle      6 [    15,     3]     -0.20727064        -4.5589997204         0.0001886061
+
+LAQA geometry optimization:      7 cycle 
+Energy:      -4.5592503
+MAE force:  2.40814041e-04 RMS force:  3.43308663e-04 Max force:    0.0010125147
+E: -4.55925029867662 F: 0.00024081404140528957 dF: 5.220796491634642e-05 score: -0.2077940384005043
+Cycle      7 [    15,     4]     -0.20779404        -4.5592502987         0.0002408140
+LAQA local geometry optpmization is converged: structure ID     16
+
+LAQA geometry optimization:      8 cycle 
+Energy:      -4.5488293
+MAE force:  1.25872179e-03 RMS force:  1.68012797e-03 Max force:    0.0042098783
+E: -4.548829272678127 F: 0.0012587217867802995 dF: 0.020476409250793935 score: -0.20680365488849778
+Cycle      8 [     0,     1]     -0.20680365        -4.5488292727         0.0012587218
+
+LAQA geometry optimization:      9 cycle 
+Energy:       -4.557919
+MAE force:  7.67226728e-04 RMS force:  1.13962380e-03 Max force:    0.0035524716
+E: -4.557919012391669 F: 0.0007672267284657947 dF: 0.0004914950583145048 score: -0.20777695968504237
+Cycle      9 [     0,     2]     -0.20777696        -4.5579190124         0.0007672267
+
+LAQA geometry optimization:     10 cycle 
+Energy:       -4.559116
+MAE force:  3.61558481e-04 RMS force:  5.43915829e-04 Max force:    0.0016928941
+E: -4.559116002568097 F: 0.0003615584808016056 dF: 0.0004056682476641891 score: -0.20739366803500492
+Cycle     10 [     0,     3]     -0.20739367        -4.5591160026         0.0003615585
+
+LAQA geometry optimization:     11 cycle 
+Energy:      -4.5594231
+MAE force:  9.16713556e-05 RMS force:  1.10627697e-04 Max force:     0.000254877
+E: -4.559423104501906 F: 9.167135562473503e-05 dF: 0.00026988712517687056 score: -0.20726207355025925
+Cycle     11 [     0,     4]     -0.20726207        -4.5594231045         0.0000916714
+LAQA local geometry optpmization is converged: structure ID      1
+
+LAQA geometry optimization:     12 cycle 
+Energy:      -4.5499062
+MAE force:  1.23016195e-03 RMS force:  1.62689785e-03 Max force:    0.0041258147
+E: -4.549906163334291 F: 0.0012301619488592746 dF: 0.020591339173510297 score: -0.20685066250844175
+Cycle     12 [    63,     1]     -0.20685066        -4.5499061633         0.0012301619
+
+LAQA geometry optimization:     13 cycle 
+Energy:      -4.5580583
+MAE force:  5.53138784e-04 RMS force:  8.41176782e-04 Max force:    0.0026670551
+E: -4.558058312021007 F: 0.0005531387844684668 dF: 0.0006770231643908078 score: -0.2074104303577374
+Cycle     13 [    63,     2]     -0.20741043        -4.5580583120         0.0005531388
+
+LAQA geometry optimization:     14 cycle 
+Energy:      -4.5591067
+MAE force:  3.42360328e-04 RMS force:  5.22333671e-04 Max force:    0.0016340291
+E: -4.55910668275002 F: 0.0003423603276616384 dF: 0.00021077845680682837 score: -0.20751016410112488
+Cycle     14 [    63,     3]     -0.20751016        -4.5591066828         0.0003423603
+
+LAQA geometry optimization:     15 cycle 
+Energy:      -4.5593927
+MAE force:  6.15792971e-05 RMS force:  8.03456665e-05 Max force:   0.00020737204
+E: -4.559392703669331 F: 6.157929710832106e-05 dF: 0.00028078103055331733 score: -0.20725187550449306
+Cycle     15 [    63,     4]     -0.20725188        -4.5593927037         0.0000615793
+LAQA local geometry optpmization is converged: structure ID     64
+
+LAQA geometry optimization:     16 cycle 
+Energy:      -4.5456202
+MAE force:  9.35485974e-04 RMS force:  1.21699343e-03 Max force:    0.0030165749
+E: -4.545620158848574 F: 0.0009354859740657126 dF: 0.02079039278527125 score: -0.20664014472577902
+Cycle     16 [    95,     1]     -0.20664014        -4.5456201588         0.0009354860
+
+LAQA geometry optimization:     17 cycle 
+Energy:       -4.553344
+MAE force:  9.13265959e-04 RMS force:  1.28233793e-03 Max force:    0.0038939113
+E: -4.553344008754865 F: 0.0009132659592906787 dF: 2.222001477503394e-05 score: -0.22573827757618048
+Cycle     17 [    95,     2]     -0.22573828        -4.5533440088         0.0009132660
+
+LAQA geometry optimization:     18 cycle 
+Energy:      -4.5558369
+MAE force:  4.40782238e-04 RMS force:  6.36515869e-04 Max force:    0.0018641145
+E: -4.55583692968008 F: 0.00044078223766119153 dF: 0.0004724837216294872 score: -0.20728910069234915
+Cycle     18 [    95,     3]     -0.20728910        -4.5558369297         0.0004407822
+
+LAQA geometry optimization:     19 cycle 
+Energy:      -4.5576633
+MAE force:  7.29523492e-04 RMS force:  1.11477724e-03 Max force:     0.003562362
+E: -4.557663276085105 F: 0.0007295234922257484 dF: 0.00028874125456455684 score: -0.2080881067401355
+Cycle     19 [    95,     4]     -0.20808811        -4.5576632761         0.0007295235
+
+LAQA geometry optimization:     20 cycle 
+Energy:      -4.5586109
+MAE force:  1.68015994e-04 RMS force:  2.46215202e-04 Max force:   0.00071432787
+E: -4.558610945039223 F: 0.00016801599358119893 dF: 0.0005615074986445494 score: -0.20723472554098085
+Cycle     20 [    95,     5]     -0.20723473        -4.5586109450         0.0001680160
+
+LAQA geometry optimization:     21 cycle 
+Energy:      -4.5591525
+MAE force:  4.02978800e-04 RMS force:  5.89338454e-04 Max force:    0.0018243289
+E: -4.5591525362484315 F: 0.0004029787995354965 dF: 0.00023496280595429754 score: -0.20757977559550067
+Cycle     21 [    95,     6]     -0.20757978        -4.5591525362         0.0004029788
+
+LAQA geometry optimization:     22 cycle 
+Energy:      -4.5594096
+MAE force:  8.45668714e-05 RMS force:  1.20005810e-04 Max force:   0.00033289555
+E: -4.559409565612849 F: 8.456687140775526e-05 dF: 0.0003184119281277412 score: -0.20725711938346486
+Cycle     22 [    95,     7]     -0.20725712        -4.5594095656         0.0000845669
+LAQA local geometry optpmization is converged: structure ID     96
+
+LAQA geometry optimization:     23 cycle 
+Energy:      -4.5499041
+MAE force:  2.11122182e-03 RMS force:  2.89190698e-03 Max force:    0.0068267632
+E: -4.549904053091304 F: 0.00211122181663031 dF: 0.01990941637887672 score: -0.20692575902344398
+Cycle     23 [    97,     1]     -0.20692576        -4.5499040531         0.0021112218
+
+LAQA geometry optimization:     24 cycle 
+Energy:      -4.3491054
+MAE force:  9.87366603e-03 RMS force:  1.41374242e-02 Max force:     0.041209923
+E: -4.349105362289744 F: 0.00987366602999208 dF: 0.0077624442133617695 score: -0.2039661552996121
+Cycle     24 [    97,     2]     -0.20396616        -4.3491053623         0.0098736660
+
+LAQA geometry optimization:     25 cycle 
+Energy:      -4.5792515
+MAE force:  2.56404315e-03 RMS force:  3.69608842e-03 Max force:     0.012131926
+E: -4.579251536832315 F: 0.0025640431549772105 dF: 0.00730962287501487 score: -0.20859750003496522
+Cycle     25 [    97,     3]     -0.20859750        -4.5792515368         0.0025640432
+
+LAQA geometry optimization:     26 cycle 
+Energy:      -4.6069989
+MAE force:  6.41596757e-04 RMS force:  8.17933495e-04 Max force:    0.0019228347
+E: -4.606998912679345 F: 0.0006415967566108343 dF: 0.0019224463983663763 score: -0.20951610465203463
+Cycle     26 [    97,     4]     -0.20951610        -4.6069989127         0.0006415968
+
+LAQA geometry optimization:     27 cycle 
+Energy:       -4.610403
+MAE force:  4.91909979e-04 RMS force:  6.36884836e-04 Max force:    0.0019015245
+E: -4.610403042131396 F: 0.0004919099789921298 dF: 0.00014968677761870457 score: -0.21037204719413238
+Cycle     27 [    97,     5]     -0.21037205        -4.6104030421         0.0004919100
+
+LAQA geometry optimization:     28 cycle 
+Energy:      -4.6112051
+MAE force:  1.61810325e-04 RMS force:  2.01963714e-04 Max force:   0.00045202053
+E: -4.611205105897752 F: 0.00016181032453447037 dF: 0.00033009965445765944 score: -0.20963989068749353
+Cycle     28 [    97,     6]     -0.20963989        -4.6112051059         0.0001618103
+
+LAQA geometry optimization:     29 cycle 
+Energy:      -4.6118663
+MAE force:  1.67319789e-04 RMS force:  2.21313123e-04 Max force:   0.00061962936
+E: -4.611866297733673 F: 0.00016731978911920813 dF: 5.509464584737764e-06 score: -0.21217099701393594
+Cycle     29 [    97,     7]     -0.21217100        -4.6118662977         0.0001673198
+
+LAQA geometry optimization:     30 cycle 
+Energy:      -4.6120276
+MAE force:  7.41008190e-05 RMS force:  9.32197066e-05 Max force:   0.00022325742
+E: -4.612027645442957 F: 7.410081899165216e-05 dF: 9.321897012755597e-05 score: -0.20966707203907423
+Cycle     30 [    97,     8]     -0.20966707        -4.6120276454         0.0000741008
+LAQA local geometry optpmization is converged: structure ID     98
+
+LAQA geometry optimization:     31 cycle 
+Energy:      -4.5037248
+MAE force:  1.08359035e-03 RMS force:  1.48211196e-03 Max force:    0.0042389605
+E: -4.503724783014038 F: 0.00108359035182378 dF: 0.021018863007813905 score: -0.2047426941574688
+Cycle     31 [     6,     1]     -0.20474269        -4.5037247830         0.0010835904
+
+LAQA geometry optimization:     32 cycle 
+Energy:        -4.50739
+MAE force:  5.25379488e-04 RMS force:  7.16031340e-04 Max force:     0.001729128
+E: -4.507390019565546 F: 0.0005253794884470556 dF: 0.0005582108633767243 score: -0.20512860407709332
+Cycle     32 [     6,     2]     -0.20512860        -4.5073900196         0.0005253795
+
+LAQA geometry optimization:     33 cycle 
+Energy:      -4.5085421
+MAE force:  5.48479902e-04 RMS force:  7.53043937e-04 Max force:    0.0019429998
+E: -4.508542060205806 F: 0.0005484799020098734 dF: 2.3100413562817854e-05 score: -0.21144508968892725
+Cycle     33 [     6,     3]     -0.21144509        -4.5085420602         0.0005484799
+
+LAQA geometry optimization:     34 cycle 
+Energy:      -4.5092852
+MAE force:  5.00182246e-04 RMS force:  6.88547442e-04 Max force:    0.0016345352
+E: -4.509285202777053 F: 0.0005001822458822754 dF: 4.829765612759799e-05 score: -0.20755751356884974
+Cycle     34 [     6,     4]     -0.20755751        -4.5092852028         0.0005001822
+
+LAQA geometry optimization:     35 cycle 
+Energy:      -4.5106513
+MAE force:  1.66734937e-03 RMS force:  2.28229817e-03 Max force:    0.0059218945
+E: -4.510651254165515 F: 0.0016673493651197587 dF: 0.0011671671192374834 score: -0.206220543270606
+Cycle     35 [     6,     5]     -0.20622054        -4.5106512542         0.0016673494
+
+LAQA geometry optimization:     36 cycle 
+Energy:      -4.5209716
+MAE force:  1.12284398e-03 RMS force:  1.55528799e-03 Max force:    0.0038850282
+E: -4.520971556239045 F: 0.0011228439818151768 dF: 0.0005445053833045819 score: -0.20665643542380435
+Cycle     36 [     6,     6]     -0.20665644        -4.5209715562         0.0011228440
+
+LAQA geometry optimization:     37 cycle 
+Energy:      -4.5290506
+MAE force:  1.26177189e-03 RMS force:  1.62794843e-03 Max force:    0.0039044278
+E: -4.529050625755352 F: 0.0012617718892607903 dF: 0.0001389279074456135 score: -0.21159577371268445
+Cycle     37 [     6,     7]     -0.21159577        -4.5290506258         0.0012617719
+
+LAQA geometry optimization:     38 cycle 
+Energy:      -4.5313565
+MAE force:  3.08595755e-04 RMS force:  4.10314535e-04 Max force:   0.00095465302
+E: -4.531356521518306 F: 0.00030859575490922963 dF: 0.0009531761343515607 score: -0.20602070572230996
+Cycle     38 [     6,     8]     -0.20602071        -4.5313565215         0.0003085958
+
+LAQA geometry optimization:     39 cycle 
+Energy:      -4.5318752
+MAE force:  4.03714489e-04 RMS force:  5.28583312e-04 Max force:    0.0012591505
+E: -4.531875184849036 F: 0.00040371448878624277 dF: 9.511873387701313e-05 score: -0.20685107362962213
+Cycle     39 [     6,     9]     -0.20685107        -4.5318751848         0.0004037145
+
+LAQA geometry optimization:     40 cycle 
+Energy:       -4.532046
+MAE force:  3.00367687e-05 RMS force:  4.70161908e-05 Max force:   0.00016837436
+E: -4.532045987916311 F: 3.0036768706462506e-05 dF: 0.00037367772007978025 score: -0.20600329755981486
+Cycle     40 [     6,    10]     -0.20600330        -4.5320459879         0.0000300368
+LAQA local geometry optpmization is converged: structure ID      7
+
+LAQA geometry optimization:     41 cycle 
+Energy:      -4.5036828
+MAE force:  1.08905645e-03 RMS force:  1.48959492e-03 Max force:    0.0042574862
+E: -4.503682843655813 F: 0.0010890564541563756 dF: 0.021022907625895346 score: -0.20474106490092195
+Cycle     41 [    20,     1]     -0.20474106        -4.5036828437         0.0010890565
+
+LAQA geometry optimization:     42 cycle 
+Energy:      -4.5073765
+MAE force:  5.20645823e-04 RMS force:  7.12252973e-04 Max force:    0.0017035295
+E: -4.507376545004205 F: 0.0005206458233046808 dF: 0.0005684106308516949 score: -0.20511919944494786
+Cycle     42 [    20,     2]     -0.20511920        -4.5073765450         0.0005206458
+
+LAQA geometry optimization:     43 cycle 
+Energy:      -4.5085719
+MAE force:  5.41259734e-04 RMS force:  7.46097521e-04 Max force:    0.0019219567
+E: -4.508571922443418 F: 0.0005412597337593259 dF: 2.0613910454645107e-05 score: -0.2120410195656986
+Cycle     43 [    20,     3]     -0.21204102        -4.5085719224         0.0005412597
+
+LAQA geometry optimization:     44 cycle 
+Energy:      -4.5093609
+MAE force:  6.06891412e-04 RMS force:  8.28048704e-04 Max force:    0.0019146627
+E: -4.509360940091706 F: 0.0006068914124376067 dF: 6.56316786782808e-05 score: -0.20777689244361613
+Cycle     44 [    20,     4]     -0.20777689        -4.5093609401         0.0006068914
+
+LAQA geometry optimization:     45 cycle 
+Energy:      -4.5125324
+MAE force:  2.56171904e-03 RMS force:  3.49048837e-03 Max force:    0.0086602395
+E: -4.512532390614657 F: 0.002561719039498235 dF: 0.0019548276270606284 score: -0.20679362096546014
+Cycle     45 [    20,     5]     -0.20679362        -4.5125323906         0.0025617190
+
+LAQA geometry optimization:     46 cycle 
+Energy:      -4.5232462
+MAE force:  4.38341237e-04 RMS force:  6.00566085e-04 Max force:    0.0016961239
+E: -4.523246219208507 F: 0.0004383412374488329 dF: 0.0021233778020494022 score: -0.2056473455394806
+Cycle     46 [    20,     6]     -0.20564735        -4.5232462192         0.0004383412
+
+LAQA geometry optimization:     47 cycle 
+Energy:      -4.5316216
+MAE force:  6.87598258e-04 RMS force:  9.05505748e-04 Max force:    0.0021126107
+E: -4.531621615684465 F: 0.0006875982582101659 dF: 0.000249257020761333 score: -0.2069312020122187
+Cycle     47 [    20,     7]     -0.20693120        -4.5316216157         0.0006875983
+
+LAQA geometry optimization:     48 cycle 
+Energy:      -4.5320834
+MAE force:  3.45216403e-05 RMS force:  4.77846725e-05 Max force:   0.00013482698
+E: -4.532083386456126 F: 3.452164033815074e-05 dF: 0.0006530766178720152 score: -0.2060047027006871
+Cycle     48 [    20,     8]     -0.20600470        -4.5320833865         0.0000345216
+LAQA local geometry optpmization is converged: structure ID     21
+
+LAQA geometry optimization:     49 cycle 
+Energy:      -4.5036959
+MAE force:  1.08607643e-03 RMS force:  1.48703957e-03 Max force:    0.0042615864
+E: -4.503695853582737 F: 0.0010860764290274182 dF: 0.02103201601763008 score: -0.20474148994773556
+Cycle     49 [    83,     1]     -0.20474149        -4.5036958536         0.0010860764
+
+LAQA geometry optimization:     50 cycle 
+Energy:      -4.5073941
+MAE force:  5.17872848e-04 RMS force:  7.10955303e-04 Max force:    0.0017043135
+E: -4.507394138172088 F: 0.0005178728476250774 dF: 0.0005682035814023409 score: -0.20511755190746744
+Cycle     50 [    83,     2]     -0.20511755        -4.5073941382         0.0005178728
+
+LAQA geometry optimization:     51 cycle 
+Energy:       -4.508581
+MAE force:  5.41298331e-04 RMS force:  7.46652829e-04 Max force:    0.0018891304
+E: -4.508580983862175 F: 0.0005412983306267765 dF: 2.342548300169906e-05 score: -0.21118945532615366
+Cycle     51 [    83,     3]     -0.21118946        -4.5085809839         0.0005412983
+
+LAQA geometry optimization:     52 cycle 
+Energy:      -4.5094065
+MAE force:  6.57236591e-04 RMS force:  9.02675519e-04 Max force:    0.0021412309
+E: -4.509406537367707 F: 0.0006572365914795094 dF: 0.00011593826085273297 score: -0.20683591219901498
+Cycle     52 [    83,     4]     -0.20683591        -4.5094065374         0.0006572366
+
+LAQA geometry optimization:     53 cycle 
+Energy:      -4.5117394
+MAE force:  2.21195694e-03 RMS force:  3.03555499e-03 Max force:    0.0072697241
+E: -4.5117394431252125 F: 0.0022119569365447646 dF: 0.0015547203450652553 score: -0.20665258121458882
+Cycle     53 [    83,     5]     -0.20665258        -4.5117394431         0.0022119569
+
+LAQA geometry optimization:     54 cycle 
+Energy:      -4.5213508
+MAE force:  5.69689286e-04 RMS force:  7.88921870e-04 Max force:    0.0021773084
+E: -4.521350751610805 F: 0.0005696892858772483 dF: 0.0016422676506675164 score: -0.20561475354406328
+Cycle     54 [    83,     6]     -0.20561475        -4.5213507516         0.0005696893
+
+LAQA geometry optimization:     55 cycle 
+Energy:      -4.5310249
+MAE force:  1.07252649e-03 RMS force:  1.42520955e-03 Max force:    0.0033091102
+E: -4.531024853226833 F: 0.00107252649398312 dF: 0.0005028372081058716 score: -0.20709949770172023
+Cycle     55 [    83,     7]     -0.20709950        -4.5310248532         0.0010725265
+
+LAQA geometry optimization:     56 cycle 
+Energy:      -4.5320692
+MAE force:  4.05624649e-05 RMS force:  5.72618448e-05 Max force:   0.00015092563
+E: -4.532069196289756 F: 4.0562464885337144e-05 dF: 0.0010319640290977828 score: -0.20600394246172543
+Cycle     56 [    83,     8]     -0.20600394        -4.5320691963         0.0000405625
+
+LAQA geometry optimization:     57 cycle 
+Energy:      -4.5320865
+MAE force:  3.08116604e-05 RMS force:  4.08354790e-05 Max force:   0.00010852789
+E: -4.5320865361468465 F: 3.081166040280376e-05 dF: 9.750804482533385e-06 score: -0.20605261449151266
+Cycle     57 [    83,     9]     -0.20605261        -4.5320865361         0.0000308117
+LAQA local geometry optpmization is converged: structure ID     84
+
+LAQA geometry optimization:     58 cycle 
+Energy:      -4.5036919
+MAE force:  1.08460032e-03 RMS force:  1.48639853e-03 Max force:    0.0042684688
+E: -4.503691873019557 F: 0.0010846003232557091 dF: 0.02103366450822803 score: -0.20474123064813157
+Cycle     58 [     5,     1]     -0.20474123        -4.5036918730         0.0010846003
+
+LAQA geometry optimization:     59 cycle 
+Energy:       -4.507387
+MAE force:  5.21789277e-04 RMS force:  7.13890343e-04 Max force:    0.0017047126
+E: -4.507386985795329 F: 0.0005217892768969438 dF: 0.0005628110463587653 score: -0.20512310536349082
+Cycle     59 [     5,     2]     -0.20512311        -4.5073869858         0.0005217893
+
+LAQA geometry optimization:     60 cycle 
+Energy:      -4.5085865
+MAE force:  5.28215261e-04 RMS force:  7.26474285e-04 Max force:    0.0018638394
+E: -4.508586532753589 F: 0.0005282152605632264 dF: 6.425983666282658e-06 score: -0.22664537416928177
+Cycle     60 [     5,     3]     -0.22664537        -4.5085865328         0.0005282153
+
+LAQA geometry optimization:     61 cycle 
+Energy:      -4.5093712
+MAE force:  6.34085728e-04 RMS force:  8.65716981e-04 Max force:    0.0020566853
+E: -4.509371249615104 F: 0.0006340857283118233 dF: 0.0001058704677485969 score: -0.2068702724937139
+Cycle     61 [     5,     4]     -0.20687027        -4.5093712496         0.0006340857
+
+LAQA geometry optimization:     62 cycle 
+Energy:      -4.5115201
+MAE force:  2.27618304e-03 RMS force:  3.09781265e-03 Max force:    0.0074731796
+E: -4.5115201435448125 F: 0.0022761830432359146 dF: 0.0016420973149240913 score: -0.20664665596197263
+Cycle     62 [     5,     5]     -0.20664666        -4.5115201435         0.0022761830
+
+LAQA geometry optimization:     63 cycle 
+Energy:      -4.5202564
+MAE force:  5.66926417e-04 RMS force:  7.72433713e-04 Max force:    0.0019674105
+E: -4.520256445014513 F: 0.0005669264170484352 dF: 0.0017092566261874794 score: -0.20556022115284844
+Cycle     63 [     5,     6]     -0.20556022        -4.5202564450         0.0005669264
+
+LAQA geometry optimization:     64 cycle 
+Energy:      -4.5302856
+MAE force:  1.37174206e-03 RMS force:  1.83448183e-03 Max force:    0.0044224241
+E: -4.530285639381077 F: 0.0013717420553424518 dF: 0.0008048156382940166 score: -0.2070910852676494
+Cycle     64 [     5,     7]     -0.20709109        -4.5302856394         0.0013717421
+
+LAQA geometry optimization:     65 cycle 
+Energy:       -4.532073
+MAE force:  5.52346629e-05 RMS force:  6.98094660e-05 Max force:   0.00016346406
+E: -4.532072958155027 F: 5.523466290109098e-05 dF: 0.0013165073924413608 score: -0.20600447497740196
+Cycle     65 [     5,     8]     -0.20600447        -4.5320729582         0.0000552347
+
+LAQA geometry optimization:     66 cycle 
+Energy:      -4.5320882
+MAE force:  1.92236741e-05 RMS force:  2.41515461e-05 Max force:   6.1250555e-05
+E: -4.532088242681709 F: 1.922367407056338e-05 dF: 3.60109888305276e-05 score: -0.20600914209870766
+Cycle     66 [     5,     9]     -0.20600914        -4.5320882427         0.0000192237
+LAQA local geometry optpmization is converged: structure ID      6
+
+LAQA global geometry optimization is converged at step     66
+Total number of LAQA optimized structrure found:     10
+
+Optimized structure list (unsorted)
+Struct. ID    Total energy [au]    Total energy [eV]
+         3          -4.55938385        -124.06715403
+        16          -4.55925030        -124.06351984
+         1          -4.55942310        -124.06822213
+        64          -4.55939270        -124.06739488
+        96          -4.55940957        -124.06785371
+        98          -4.61202765        -125.49966460
+         7          -4.53204599        -123.32325284
+        21          -4.53208339        -123.32427050
+        84          -4.53208654        -123.32435621
+         6          -4.53208824        -123.32440265
+
+Optimized structure list (sorted by lower energy)
+Struct. ID    Total energy [au]    Total energy [eV]
+        98          -4.61202765        -125.49966460
+         1          -4.55942310        -124.06822213
+        96          -4.55940957        -124.06785371
+        64          -4.55939270        -124.06739488
+         3          -4.55938385        -124.06715403
+        16          -4.55925030        -124.06351984
+         6          -4.53208824        -123.32440265
+        84          -4.53208654        -123.32435621
+        21          -4.53208339        -123.32427050
+         7          -4.53204599        -123.32325284
+
+Finish LAQA geometry optimization job at  2021-02-23 01:44:42.782342
+Wall time of LAQA geometry optimization job:                   426.80 sec.
+
+Finish LAQA conforation searh job at  2021-02-23 01:44:42.783722
+Wall time of LAQA conformation optimization job:               448.45 sec.

@@ -1,0 +1,1060 @@
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+normal termination of xtb
+
+Start 3D structure initialization job at  2021-02-23 18:44:09.310284 
+
+Setting a default value for energy_var: 0.001
+Setting a default value for selection: roulette_wheel
+Setting a default value for fitness_sum_limit: 1.2
+Setting a default value for prob_for_crossing: 1.0
+Setting a default value for max_iter: 30
+Setting a default value for iter_limit_conv: 20
+Setting a default value for energy_diff_conv: 0.001
+Setting a default value for cnt_max: 500
+Setting a default value for force_field: mmff94
+Setting a default value for energy_tol: -5.0
+Setting a default value for force_tol: 0.0001
+Setting a default value for alpb: None
+Setting a default value for gauss_exedir: ~/bin/g16
+Setting a default value for gauss_scrdir: /data/group1/z43901k/work/laqa/laqa/newcode/examples/initgeom/ala-dip-100_gfn2-xtb
+Setting a default value for qcmethod: pm6
+Setting a default value for solvmethod: None
+Setting a default value for solvent: water
+Setting a default value for charge: 0
+Setting a default value for mult: 1
+Setting a default value for nprocs: 1
+Setting a default value for memory: 2GB
+Setting a default value for sdf_out: initial_structures.sdf
+Setting a default value for printlevel: 0
+params:  {'popsize': 100, 'cntmax': 300, 'seed': 0, 'optsteps': 100, 'energy_function': 'xtb', 'xtb_call': '/home/z43901k/data/bin/xtb/6.4.0/bin/xtb', 'gfn': '2', 'energy_var': 0.001, 'selection': 'roulette_wheel', 'fitness_sum_limit': 1.2, 'prob_for_crossing': 1.0, 'max_iter': 30, 'iter_limit_conv': 20, 'energy_diff_conv': 0.001, 'cnt_max': 500, 'force_field': 'mmff94', 'energy_tol': -5.0, 'force_tol': 0.0001, 'alpb': None, 'gauss_exedir': '~/bin/g16', 'gauss_scrdir': '/data/group1/z43901k/work/laqa/laqa/newcode/examples/initgeom/ala-dip-100_gfn2-xtb', 'qcmethod': 'pm6', 'solvmethod': None, 'solvent': 'water', 'charge': 0, 'mult': 1, 'nprocs': 1, 'memory': '2GB', 'sdf_out': 'initial_structures.sdf', 'printlevel': 0}
+Local optimization will be performed with xTB.
+energy_function:  xtb
+popsize: 100 cnt_max:  500 seed  0
+Setting a default value for rmsd_type: cartesian
+Setting a default value for distance_cutoff_1: 1.3
+Setting a default value for distance_cutoff_2: 2.15
+Setting a default value for rmsd_cutoff_uniq: 0.2
+Setting a default value for chiral: True
+Setting a default value for optimize_torsion: True
+Setting a default value for smarts_torsion: [*]~[!$(*#*)&!D1]-&!@[!$(*#*)&!D1]~[*]
+SMILES:  CC(=O)N[C@H](C(=O)NC)C
+distance_cutoff_1:  1.3
+distance_cutoff_2:  2.15
+Number of atoms:  22
+Number of bonds:  21
+Number of identified torsion: 4
+Identified  torsion: [(1, 3, 4, 9), (2, 1, 3, 4), (6, 5, 7, 8), (7, 5, 4, 9)]
+
+___Initialization of 3D structures ___
+
+
+----- New trial:      1 -----
+
+Geometry of Structure 1 is added to the population, energy: -897.19590
+Structure 1
+Values of torsion before: [18.0, 36.0, -159.0, -47.0] and after local opt: [97.0, -6.01, -179.2, -77.88]
+
+----- New trial:      2 -----
+
+Geometry of Structure 2 is added to the population, energy: -897.24427
+Structure 2
+Values of torsion before: [82.0, 69.0, 28.0, -24.0] and after local opt: [98.03, -5.95, -0.19, -75.8]
+
+----- New trial:      3 -----
+
+Geometry of Structure 3 is added to the population, energy: -897.19544
+Structure 3
+Values of torsion before: [65.0, 4.0, 119.0, -68.0] and after local opt: [112.46, -7.26, 173.49, -86.5]
+
+----- New trial:      4 -----
+
+Geometry of Structure 4 is added to the population, energy: -897.10940
+Structure 4
+Values of torsion before: [79.0, -108.0, -35.0, -108.0] and after local opt: [91.48, 179.18, -1.12, -80.09]
+
+----- New trial:      5 -----
+
+Geometry of Structure 5 is invalid.
+
+----- New trial:      6 -----
+
+Geometry of Structure 6 is added to the population, energy: -897.06448
+Structure 6
+Values of torsion before: [129.0, -104.0, -21.0, -129.0] and after local opt: [168.55, 173.03, -1.65, -85.35]
+
+----- New trial:      7 -----
+
+Geometry of Structure 7 is added to the population, energy: -897.17684
+Structure 7
+Values of torsion before: [-142.0, 171.0, -10.0, 62.0] and after local opt: [168.19, 176.58, -1.86, 93.28]
+
+----- New trial:      8 -----
+
+Geometry of Structure 8 is added to the population, energy: -897.17705
+Structure 8
+Values of torsion before: [106.99, -127.99, 2.0, 43.0] and after local opt: [167.01, 177.54, -2.16, 94.1]
+
+----- New trial:      9 -----
+
+Geometry of Structure 9 is added to the population, energy: -896.86255
+Structure 9
+Values of torsion before: [-17.99, 133.0, 148.0, -75.0] and after local opt: [-55.43, -174.06, 175.46, -87.45]
+
+----- New trial:     10 -----
+
+Geometry of Structure 10 is added to the population, energy: -897.31827
+Structure 10
+Values of torsion before: [103.0, 65.0, 47.0, 87.0] and after local opt: [155.94, 0.64, 3.03, -164.89]
+
+----- New trial:     11 -----
+
+Geometry of Structure 11 is invalid.
+
+----- New trial:     12 -----
+
+Geometry of Structure 12 is invalid.
+
+----- New trial:     13 -----
+
+Geometry of Structure 13 is added to the population, energy: -897.17699
+Structure 13
+Values of torsion before: [-179.0, 134.0, 73.0, -9.0] and after local opt: [166.44, 178.0, -1.87, 94.45]
+
+----- New trial:     14 -----
+
+Geometry of Structure 14 is added to the population, energy: -896.93002
+Structure 14
+Values of torsion before: [-55.0, -13.0, -147.0, -82.0] and after local opt: [-55.67, 22.5, 177.36, -66.34]
+
+----- New trial:     15 -----
+
+Geometry of Structure 15 is added to the population, energy: -897.24299
+Structure 15
+Values of torsion before: [111.0, -66.0, -57.0, -107.0] and after local opt: [111.51, -9.06, 0.57, -80.63]
+
+----- New trial:     16 -----
+
+Geometry of Structure 16 is added to the population, energy: -897.21519
+Structure 16
+Values of torsion before: [99.0, 50.0, -133.0, -138.0] and after local opt: [145.14, -5.56, 178.38, -135.65]
+
+----- New trial:     17 -----
+
+Geometry of Structure 17 is added to the population, energy: -897.24437
+Structure 17
+Values of torsion before: [-16.01, 81.01, 71.0, -124.0] and after local opt: [92.7, -5.02, -0.37, -74.59]
+
+----- New trial:     18 -----
+
+Geometry of Structure 18 is added to the population, energy: -897.07323
+Structure 18
+Values of torsion before: [-25.0, 103.0, -30.0, -116.0] and after local opt: [-66.63, 177.14, 3.72, 162.55]
+
+----- New trial:     19 -----
+
+Geometry of Structure 19 is added to the population, energy: -897.19142
+Structure 19
+Values of torsion before: [101.0, -9.0, 97.0, -75.0] and after local opt: [103.13, -5.33, 172.36, -83.09]
+
+----- New trial:     20 -----
+
+Geometry of Structure 20 is added to the population, energy: -897.05459
+Structure 20
+Values of torsion before: [129.0, 101.0, 121.0, -32.0] and after local opt: [91.43, -178.94, 173.51, -86.04]
+
+----- New trial:     21 -----
+
+Geometry of Structure 21 is added to the population, energy: -897.00283
+Structure 21
+Values of torsion before: [48.0, -133.0, 126.0, 18.0] and after local opt: [140.33, 172.84, -173.55, -84.5]
+
+----- New trial:     22 -----
+
+Geometry of Structure 22 is added to the population, energy: -896.92978
+Structure 22
+Values of torsion before: [-17.0, 115.0, -56.0, -31.0] and after local opt: [-80.79, 175.69, -0.43, -1.46]
+
+----- New trial:     23 -----
+
+Geometry of Structure 23 is added to the population, energy: -897.06183
+Structure 23
+Values of torsion before: [-85.0, -83.0, -84.0, -163.0] and after local opt: [-69.5, -15.09, 11.64, 158.59]
+
+----- New trial:     24 -----
+
+Geometry of Structure 24 is added to the population, energy: -897.17649
+Structure 24
+Values of torsion before: [134.0, 157.0, -46.0, 64.0] and after local opt: [168.0, 178.13, -2.19, 92.47]
+
+----- New trial:     25 -----
+
+Geometry of Structure 25 is added to the population, energy: -896.99455
+Structure 25
+Values of torsion before: [-144.0, -133.99, 168.0, -113.0] and after local opt: [-76.1, 169.75, -174.65, -174.48]
+
+----- New trial:     26 -----
+
+Geometry of Structure 26 is added to the population, energy: -896.99915
+Structure 26
+Values of torsion before: [-102.99, -160.0, -138.0, 179.0] and after local opt: [-71.28, -176.87, -179.21, -179.74]
+
+----- New trial:     27 -----
+
+Geometry of Structure 27 is added to the population, energy: -897.17731
+Structure 27
+Values of torsion before: [97.0, 170.0, 21.0, 89.0] and after local opt: [166.88, 177.32, -1.97, 95.82]
+
+----- New trial:     28 -----
+
+Geometry of Structure 28 is added to the population, energy: -897.24446
+Structure 28
+Values of torsion before: [-38.0, 88.0, -59.0, -69.0] and after local opt: [95.39, -5.6, -0.51, -76.46]
+
+----- New trial:     29 -----
+
+Geometry of Structure 29 is added to the population, energy: -897.17681
+Structure 29
+Values of torsion before: [168.0, 122.0, 35.0, 117.0] and after local opt: [163.83, 178.32, -2.28, 100.19]
+
+----- New trial:     30 -----
+
+Geometry of Structure 30 is added to the population, energy: -897.06200
+Structure 30
+Values of torsion before: [-39.0, 51.0, 73.0, 159.0] and after local opt: [-67.24, -14.51, 10.55, 155.62]
+
+----- New trial:     31 -----
+
+Geometry of Structure 31 is added to the population, energy: -897.06074
+Structure 31
+Values of torsion before: [148.99, 179.0, 3.0, -137.0] and after local opt: [154.47, 171.98, -1.38, -104.74]
+
+----- New trial:     32 -----
+
+Geometry of Structure 32 is added to the population, energy: -896.99900
+Structure 32
+Values of torsion before: [-13.0, 134.0, -120.0, 70.0] and after local opt: [-71.47, -177.35, -178.84, 179.69]
+
+----- New trial:     33 -----
+
+Geometry of Structure 33 is added to the population, energy: -897.10947
+Structure 33
+Values of torsion before: [121.0, 143.0, -8.0, -82.0] and after local opt: [90.88, 179.59, -1.11, -79.61]
+
+----- New trial:     34 -----
+
+Geometry of Structure 34 is added to the population, energy: -897.07314
+Structure 34
+Values of torsion before: [-55.0, -171.0, -41.0, -120.0] and after local opt: [-67.17, 177.67, 3.26, 163.48]
+
+----- New trial:     35 -----
+
+Geometry of Structure 35 is added to the population, energy: -896.96092
+Structure 35
+Values of torsion before: [-67.0, 10.99, -92.0, -9.0] and after local opt: [-48.53, 5.37, -176.76, 37.67]
+
+----- New trial:     36 -----
+
+Geometry of Structure 36 is added to the population, energy: -897.04908
+Structure 36
+Values of torsion before: [39.0, -148.0, -128.0, -105.0] and after local opt: [91.45, 179.27, -175.87, -80.36]
+
+----- New trial:     37 -----
+
+Geometry of Structure 37 is invalid.
+
+----- New trial:     38 -----
+
+Geometry of Structure 38 is invalid.
+
+----- New trial:     39 -----
+
+Geometry of Structure 39 is invalid.
+
+----- New trial:     40 -----
+
+Geometry of Structure 40 is added to the population, energy: -896.99939
+Structure 40
+Values of torsion before: [-83.0, 131.0, 115.0, -118.0] and after local opt: [-76.69, 172.31, 179.7, -178.05]
+
+----- New trial:     41 -----
+
+Geometry of Structure 41 is added to the population, energy: -897.10929
+Structure 41
+Values of torsion before: [21.0, -133.0, 10.0, -120.0] and after local opt: [90.97, 180.0, -1.47, -79.33]
+
+----- New trial:     42 -----
+
+Geometry of Structure 42 is added to the population, energy: -897.00285
+Structure 42
+Values of torsion before: [-161.0, 131.0, -168.0, -80.0] and after local opt: [166.13, 172.74, -174.35, -83.61]
+
+----- New trial:     43 -----
+
+Geometry of Structure 43 is added to the population, energy: -896.92662
+Structure 43
+Values of torsion before: [-85.0, -116.0, 66.0, -72.0] and after local opt: [-59.59, -172.45, -1.18, -74.95]
+
+----- New trial:     44 -----
+
+Geometry of Structure 44 is invalid.
+
+----- New trial:     45 -----
+
+Geometry of Structure 45 is added to the population, energy: -897.04904
+Structure 45
+Values of torsion before: [37.99, 138.01, -128.0, -46.0] and after local opt: [91.26, -179.94, -177.73, -79.9]
+
+----- New trial:     46 -----
+
+Geometry of Structure 46 is invalid.
+
+----- New trial:     47 -----
+
+Geometry of Structure 47 is added to the population, energy: -897.26270
+Structure 47
+Values of torsion before: [-25.0, 0.0, 44.0, -87.0] and after local opt: [-53.27, -4.68, -1.54, 64.24]
+
+----- New trial:     48 -----
+
+Geometry of Structure 48 is added to the population, energy: -897.06163
+Structure 48
+Values of torsion before: [-148.0, 78.01, 60.0, -159.0] and after local opt: [-70.1, -14.34, 11.69, 160.2]
+
+----- New trial:     49 -----
+
+Geometry of Structure 49 is added to the population, energy: -897.02980
+Structure 49
+Values of torsion before: [126.0, -128.0, 179.0, 21.0] and after local opt: [169.54, -179.6, 175.24, 78.85]
+
+----- New trial:     50 -----
+
+Geometry of Structure 50 is added to the population, energy: -897.26237
+Structure 50
+Values of torsion before: [-77.0, -46.0, 4.0, 61.0] and after local opt: [-53.43, -4.51, -2.3, 64.06]
+
+----- New trial:     51 -----
+
+Geometry of Structure 51 is invalid.
+
+----- New trial:     52 -----
+
+Geometry of Structure 52 is added to the population, energy: -896.86172
+Structure 52
+Values of torsion before: [-75.0, -150.0, 167.0, -98.0] and after local opt: [-54.59, -174.52, 177.72, -93.91]
+
+----- New trial:     53 -----
+
+Geometry of Structure 53 is added to the population, energy: -897.26286
+Structure 53
+Values of torsion before: [-97.0, -4.0, 92.0, -51.0] and after local opt: [-53.71, -3.9, -1.5, 63.39]
+
+----- New trial:     54 -----
+
+Geometry of Structure 54 is invalid.
+
+----- New trial:     55 -----
+
+Geometry of Structure 55 is added to the population, energy: -897.07299
+Structure 55
+Values of torsion before: [-90.0, -173.0, 62.0, 169.0] and after local opt: [-67.11, 177.52, 3.17, 163.9]
+
+----- New trial:     56 -----
+
+Geometry of Structure 56 is added to the population, energy: -897.10938
+Structure 56
+Values of torsion before: [30.0, 111.99, 81.0, -20.0] and after local opt: [91.92, 179.49, -0.93, -79.42]
+
+----- New trial:     57 -----
+
+Geometry of Structure 57 is added to the population, energy: -897.31834
+Structure 57
+Values of torsion before: [153.0, 3.0, 19.0, 157.0] and after local opt: [156.51, 0.67, 3.25, -163.89]
+
+----- New trial:     58 -----
+
+Geometry of Structure 58 is added to the population, energy: -896.99891
+Structure 58
+Values of torsion before: [-51.0, -101.0, 108.0, 174.0] and after local opt: [-70.87, -176.08, -179.22, -179.22]
+
+----- New trial:     59 -----
+
+Geometry of Structure 59 is added to the population, energy: -896.96094
+Structure 59
+Values of torsion before: [-173.0, 55.0, -139.0, -8.0] and after local opt: [-46.69, 4.64, -177.4, 39.68]
+
+----- New trial:     60 -----
+
+Geometry of Structure 60 is added to the population, energy: -897.06438
+Structure 60
+Values of torsion before: [-156.0, 99.0, -36.0, -110.0] and after local opt: [162.52, 173.24, -1.93, -89.27]
+
+----- New trial:     61 -----
+
+Geometry of Structure 61 is added to the population, energy: -897.26270
+Structure 61
+Values of torsion before: [-56.99, 66.99, 1.0, 133.0] and after local opt: [-53.54, -4.89, -1.75, 64.3]
+
+----- New trial:     62 -----
+
+Geometry of Structure 62 is added to the population, energy: -897.07323
+Structure 62
+Values of torsion before: [-32.0, 165.0, 4.0, 123.0] and after local opt: [-67.07, 177.03, 4.07, 163.82]
+
+----- New trial:     63 -----
+
+Geometry of Structure 63 is added to the population, energy: -897.03008
+Structure 63
+Values of torsion before: [145.0, 138.0, -112.0, -21.0] and after local opt: [170.11, 179.45, 174.08, 79.99]
+
+----- New trial:     64 -----
+
+Geometry of Structure 64 is added to the population, energy: -897.21524
+Structure 64
+Values of torsion before: [18.99, 33.0, 154.0, -138.0] and after local opt: [145.89, -5.75, 177.52, -135.29]
+
+----- New trial:     65 -----
+
+Geometry of Structure 65 is added to the population, energy: -897.17685
+Structure 65
+Values of torsion before: [-179.0, 125.0, -81.0, 178.0] and after local opt: [166.06, 177.92, -2.93, 97.96]
+
+----- New trial:     66 -----
+
+Geometry of Structure 66 is added to the population, energy: -897.10940
+Structure 66
+Values of torsion before: [-8.0, -98.0, -57.0, -65.0] and after local opt: [91.3, -179.7, -0.44, -80.57]
+
+----- New trial:     67 -----
+
+Geometry of Structure 67 is added to the population, energy: -897.31819
+Structure 67
+Values of torsion before: [147.0, 49.99, 14.0, 165.0] and after local opt: [156.93, 0.44, 3.2, -164.36]
+
+----- New trial:     68 -----
+
+Geometry of Structure 68 is invalid.
+
+----- New trial:     69 -----
+
+Geometry of Structure 69 is added to the population, energy: -897.17723
+Structure 69
+Values of torsion before: [-180.0, 110.99, 35.0, 160.0] and after local opt: [166.64, 177.09, -2.71, 97.61]
+
+----- New trial:     70 -----
+
+Geometry of Structure 70 is added to the population, energy: -897.06629
+Structure 70
+Values of torsion before: [-156.0, -94.99, 49.0, -147.0] and after local opt: [-69.01, 170.5, 3.31, 164.07]
+
+----- New trial:     71 -----
+
+Geometry of Structure 71 is added to the population, energy: -896.99910
+Structure 71
+Values of torsion before: [-47.0, -180.0, -99.0, 49.0] and after local opt: [-70.75, -177.87, -179.48, -180.0]
+
+----- New trial:     72 -----
+
+Geometry of Structure 72 is added to the population, energy: -897.21514
+Structure 72
+Values of torsion before: [91.0, 70.0, 108.0, 130.0] and after local opt: [145.05, -5.3, 177.45, -136.53]
+
+----- New trial:     73 -----
+
+Geometry of Structure 73 is added to the population, energy: -897.17720
+Structure 73
+Values of torsion before: [-179.0, -160.0, 74.0, -13.0] and after local opt: [166.36, 177.66, -1.86, 94.63]
+
+----- New trial:     74 -----
+
+Geometry of Structure 74 is invalid.
+
+----- New trial:     75 -----
+
+Geometry of Structure 75 is added to the population, energy: -896.99373
+Structure 75
+Values of torsion before: [-83.0, 101.0, 145.0, -137.0] and after local opt: [-75.38, 167.33, -173.06, -174.52]
+
+----- New trial:     76 -----
+
+Geometry of Structure 76 is invalid.
+
+----- New trial:     77 -----
+
+Geometry of Structure 77 is added to the population, energy: -897.19607
+Structure 77
+Values of torsion before: [33.99, -17.99, -178.0, -70.0] and after local opt: [103.37, -7.02, -178.69, -78.75]
+
+----- New trial:     78 -----
+
+Geometry of Structure 78 is added to the population, energy: -897.05106
+Structure 78
+Values of torsion before: [-172.0, -178.01, 166.0, 91.0] and after local opt: [170.31, 173.4, -178.12, 83.77]
+
+----- New trial:     79 -----
+
+Geometry of Structure 79 is added to the population, energy: -897.06023
+Structure 79
+Values of torsion before: [134.0, -129.0, -82.0, -119.0] and after local opt: [162.63, 172.96, -1.34, -110.91]
+
+----- New trial:     80 -----
+
+Geometry of Structure 80 is added to the population, energy: -897.10938
+Structure 80
+Values of torsion before: [132.0, 153.0, -78.0, -25.0] and after local opt: [91.62, 179.28, -0.84, -79.36]
+
+----- New trial:     81 -----
+
+Geometry of Structure 81 is added to the population, energy: -897.07324
+Structure 81
+Values of torsion before: [-36.0, 173.0, -86.0, -128.0] and after local opt: [-66.83, 177.39, 2.93, 163.65]
+
+----- New trial:     82 -----
+
+Geometry of Structure 82 is added to the population, energy: -897.21539
+Structure 82
+Values of torsion before: [64.01, 23.99, 142.0, -138.0] and after local opt: [144.13, -4.47, 178.34, -136.54]
+
+----- New trial:     83 -----
+
+Geometry of Structure 83 is added to the population, energy: -897.31824
+Structure 83
+Values of torsion before: [-168.0, -39.0, 52.0, -120.0] and after local opt: [156.08, 0.92, 2.29, -164.22]
+
+----- New trial:     84 -----
+
+Geometry of Structure 84 is invalid.
+
+----- New trial:     85 -----
+
+Geometry of Structure 85 is added to the population, energy: -897.06186
+Structure 85
+Values of torsion before: [154.0, 151.0, -2.0, -121.0] and after local opt: [157.11, 171.76, -1.7, -99.22]
+
+----- New trial:     86 -----
+
+Geometry of Structure 86 is added to the population, energy: -897.21509
+Structure 86
+Values of torsion before: [-100.0, -37.0, -170.0, -158.0] and after local opt: [145.92, -5.53, 177.14, -135.31]
+
+----- New trial:     87 -----
+
+Geometry of Structure 87 is invalid.
+
+----- New trial:     88 -----
+
+Geometry of Structure 88 is added to the population, energy: -897.31822
+Structure 88
+Values of torsion before: [106.0, -18.0, 8.0, 111.0] and after local opt: [156.06, 0.73, 2.96, -163.95]
+
+----- New trial:     89 -----
+
+Geometry of Structure 89 is invalid.
+
+----- New trial:     90 -----
+
+Geometry of Structure 90 is added to the population, energy: -897.17729
+Structure 90
+Values of torsion before: [74.0, 150.0, 55.0, 148.0] and after local opt: [166.81, 177.38, -2.81, 96.69]
+
+----- New trial:     91 -----
+
+Geometry of Structure 91 is added to the population, energy: -897.19658
+Structure 91
+Values of torsion before: [43.01, 11.0, 96.0, -88.0] and after local opt: [102.92, -6.77, -178.77, -78.55]
+
+----- New trial:     92 -----
+
+Geometry of Structure 92 is added to the population, energy: -896.93004
+Structure 92
+Values of torsion before: [-72.99, 12.99, 121.0, -30.0] and after local opt: [-54.87, 23.37, 177.15, -68.24]
+
+----- New trial:     93 -----
+
+Geometry of Structure 93 is invalid.
+
+----- New trial:     94 -----
+
+Geometry of Structure 94 is added to the population, energy: -897.24411
+Structure 94
+Values of torsion before: [-9.0, -7.0, 9.0, -132.0] and after local opt: [91.72, -4.81, -0.98, -74.7]
+
+----- New trial:     95 -----
+
+Geometry of Structure 95 is added to the population, energy: -896.99894
+Structure 95
+Values of torsion before: [-6.01, 138.0, -161.0, -158.0] and after local opt: [-70.56, -176.98, -179.93, -179.24]
+
+----- New trial:     96 -----
+
+Geometry of Structure 96 is added to the population, energy: -896.99848
+Structure 96
+Values of torsion before: [-41.0, -96.0, -103.0, 119.0] and after local opt: [-70.31, -176.73, 179.93, -178.28]
+
+----- New trial:     97 -----
+
+Geometry of Structure 97 is added to the population, energy: -897.26250
+Structure 97
+Values of torsion before: [-31.0, 5.0, 23.0, 101.0] and after local opt: [-53.13, -3.81, -1.93, 63.99]
+
+----- New trial:     98 -----
+
+Geometry of Structure 98 is invalid.
+
+----- New trial:     99 -----
+
+Geometry of Structure 99 is added to the population, energy: -896.92612
+Structure 99
+Values of torsion before: [-56.99, -155.0, -22.0, -88.0] and after local opt: [-61.5, -172.14, -0.96, -68.28]
+
+----- New trial:    100 -----
+
+Geometry of Structure 100 is added to the population, energy: -897.17707
+Structure 100
+Values of torsion before: [88.0, -143.0, -25.0, 27.0] and after local opt: [167.33, 177.81, -2.79, 94.06]
+
+----- New trial:    101 -----
+
+Geometry of Structure 101 is added to the population, energy: -897.24445
+Structure 101
+Values of torsion before: [-10.99, -26.01, 33.0, -124.0] and after local opt: [95.9, -5.47, -0.88, -76.72]
+
+----- New trial:    102 -----
+
+Geometry of Structure 102 is added to the population, energy: -897.17730
+Structure 102
+Values of torsion before: [-129.0, 108.0, 67.0, 63.0] and after local opt: [167.97, 177.23, -2.34, 94.89]
+
+----- New trial:    103 -----
+
+Geometry of Structure 103 is added to the population, energy: -896.95314
+Structure 103
+Values of torsion before: [-7.01, -4.0, -116.0, 66.0] and after local opt: [-18.35, -7.68, -179.04, 71.87]
+
+----- New trial:    104 -----
+
+Geometry of Structure 104 is invalid.
+
+----- New trial:    105 -----
+
+Geometry of Structure 105 is invalid.
+
+----- New trial:    106 -----
+
+Geometry of Structure 106 is invalid.
+
+----- New trial:    107 -----
+
+Geometry of Structure 107 is added to the population, energy: -896.99898
+Structure 107
+Values of torsion before: [13.0, 148.0, -135.0, -146.0] and after local opt: [-70.66, -176.68, 179.54, -179.0]
+
+----- New trial:    108 -----
+
+Geometry of Structure 108 is added to the population, energy: -897.31814
+Structure 108
+Values of torsion before: [-136.0, -78.0, -66.0, -148.0] and after local opt: [156.18, 1.43, 2.34, -163.77]
+
+----- New trial:    109 -----
+
+Geometry of Structure 109 is invalid.
+
+----- New trial:    110 -----
+
+Geometry of Structure 110 is added to the population, energy: -897.31809
+Structure 110
+Values of torsion before: [105.0, 86.0, -31.0, 50.0] and after local opt: [156.27, 1.32, 2.72, -164.69]
+
+----- New trial:    111 -----
+
+Geometry of Structure 111 is added to the population, energy: -897.05458
+Structure 111
+Values of torsion before: [71.01, 119.99, 168.0, -68.0] and after local opt: [92.63, -179.94, 173.26, -86.93]
+
+----- New trial:    112 -----
+
+Geometry of Structure 112 is added to the population, energy: -897.10909
+Structure 112
+Values of torsion before: [36.99, -137.0, 9.0, -67.0] and after local opt: [90.93, -179.59, 0.07, -80.95]
+
+----- New trial:    113 -----
+
+Geometry of Structure 113 is invalid.
+
+----- New trial:    114 -----
+
+Geometry of Structure 114 is added to the population, energy: -897.00364
+Structure 114
+Values of torsion before: [-81.0, 4.0, -121.0, -147.0] and after local opt: [-92.16, -13.16, 171.95, -172.21]
+
+----- New trial:    115 -----
+
+Geometry of Structure 115 is added to the population, energy: -897.17714
+Structure 115
+Values of torsion before: [180.0, -165.0, 90.0, 52.0] and after local opt: [166.84, 178.42, -1.76, 94.54]
+
+----- New trial:    116 -----
+
+Geometry of Structure 116 is invalid.
+
+----- New trial:    117 -----
+
+Geometry of Structure 117 is added to the population, energy: -897.04429
+Structure 117
+Values of torsion before: [23.99, -48.0, -73.0, 149.0] and after local opt: [65.5, -9.58, 3.79, 71.65]
+
+----- New trial:    118 -----
+
+Geometry of Structure 118 is added to the population, energy: -897.21508
+Structure 118
+Values of torsion before: [-158.0, -69.01, 140.0, -105.0] and after local opt: [144.17, -4.43, 177.33, -135.67]
+
+----- New trial:    119 -----
+
+Geometry of Structure 119 is added to the population, energy: -897.31780
+Structure 119
+Values of torsion before: [-126.0, -78.0, 55.0, 14.0] and after local opt: [156.24, 1.71, 2.49, -164.46]
+
+----- New trial:    120 -----
+
+Geometry of Structure 120 is added to the population, energy: -896.85904
+Structure 120
+Values of torsion before: [6.0, 100.0, -102.0, -126.0] and after local opt: [-58.67, -172.68, -177.52, -75.87]
+
+----- New trial:    121 -----
+
+Geometry of Structure 121 is added to the population, energy: -897.21535
+Structure 121
+Values of torsion before: [126.0, 70.0, -104.0, 109.0] and after local opt: [143.87, -4.71, 178.02, -136.71]
+
+----- New trial:    122 -----
+
+Geometry of Structure 122 is invalid.
+
+----- New trial:    123 -----
+
+Geometry of Structure 123 is added to the population, energy: -897.19647
+Structure 123
+Values of torsion before: [87.0, 73.99, 168.0, -14.0] and after local opt: [102.38, -6.73, -178.85, -78.13]
+
+----- New trial:    124 -----
+
+Geometry of Structure 124 is added to the population, energy: -897.21462
+Structure 124
+Values of torsion before: [76.0, 75.99, 146.0, 164.0] and after local opt: [141.15, -3.45, 179.26, -139.97]
+
+----- New trial:    125 -----
+
+Geometry of Structure 125 is added to the population, energy: -897.01322
+Structure 125
+Values of torsion before: [-76.0, 98.0, 133.0, -67.0] and after local opt: [166.39, 172.73, 177.52, -91.48]
+
+___Initialization of 3D structure completed___
+
+Total number of population (vaid structures):  100
+
+Initial population before sorting:
+ID    Energy [eV]
+    1          -897.195895
+    2          -897.244268
+    3          -897.195442
+    4          -897.109399
+    6          -897.064483
+    7          -897.176835
+    8          -897.177052
+    9          -896.862553
+   10          -897.318265
+   13          -897.176986
+   14          -896.930021
+   15          -897.242992
+   16          -897.215195
+   17          -897.244368
+   18          -897.073235
+   19          -897.191420
+   20          -897.054587
+   21          -897.002827
+   22          -896.929784
+   23          -897.061828
+   24          -897.176487
+   25          -896.994554
+   26          -896.999149
+   27          -897.177308
+   28          -897.244459
+   29          -897.176808
+   30          -897.062002
+   31          -897.060737
+   32          -896.999002
+   33          -897.109469
+   34          -897.073136
+   35          -896.960918
+   36          -897.049076
+   40          -896.999394
+   41          -897.109285
+   42          -897.002849
+   43          -896.926616
+   45          -897.049038
+   47          -897.262698
+   48          -897.061630
+   49          -897.029798
+   50          -897.262373
+   52          -896.861724
+   53          -897.262861
+   55          -897.072988
+   56          -897.109381
+   57          -897.318335
+   58          -896.998911
+   59          -896.960943
+   60          -897.064381
+   61          -897.262704
+   62          -897.073233
+   63          -897.030081
+   64          -897.215237
+   65          -897.176850
+   66          -897.109401
+   67          -897.318191
+   69          -897.177230
+   70          -897.066286
+   71          -896.999095
+   72          -897.215140
+   73          -897.177198
+   75          -896.993728
+   77          -897.196072
+   78          -897.051060
+   79          -897.060225
+   80          -897.109379
+   81          -897.073243
+   82          -897.215385
+   83          -897.318245
+   85          -897.061859
+   86          -897.215091
+   88          -897.318224
+   90          -897.177290
+   91          -897.196577
+   92          -896.930037
+   94          -897.244112
+   95          -896.998938
+   96          -896.998475
+   97          -897.262500
+   99          -896.926124
+  100          -897.177066
+  101          -897.244450
+  102          -897.177299
+  103          -896.953138
+  107          -896.998982
+  108          -897.318141
+  110          -897.318093
+  111          -897.054578
+  112          -897.109089
+  114          -897.003637
+  115          -897.177142
+  117          -897.044293
+  118          -897.215081
+  119          -897.317801
+  120          -896.859043
+  121          -897.215354
+  123          -897.196471
+  124          -897.214621
+  125          -897.013222
+
+Initial population after sorting:
+ID    Energy [eV]
+    1          -897.195895
+    2          -897.244268
+    3          -897.195442
+    4          -897.109399
+    6          -897.064483
+    7          -897.176835
+    8          -897.177052
+    9          -896.862553
+   10          -897.318265
+   13          -897.176986
+   14          -896.930021
+   15          -897.242992
+   16          -897.215195
+   17          -897.244368
+   18          -897.073235
+   19          -897.191420
+   20          -897.054587
+   21          -897.002827
+   22          -896.929784
+   23          -897.061828
+   24          -897.176487
+   25          -896.994554
+   26          -896.999149
+   27          -897.177308
+   28          -897.244459
+   29          -897.176808
+   30          -897.062002
+   31          -897.060737
+   32          -896.999002
+   33          -897.109469
+   34          -897.073136
+   35          -896.960918
+   36          -897.049076
+   40          -896.999394
+   41          -897.109285
+   42          -897.002849
+   43          -896.926616
+   45          -897.049038
+   47          -897.262698
+   48          -897.061630
+   49          -897.029798
+   50          -897.262373
+   52          -896.861724
+   53          -897.262861
+   55          -897.072988
+   56          -897.109381
+   57          -897.318335
+   58          -896.998911
+   59          -896.960943
+   60          -897.064381
+   61          -897.262704
+   62          -897.073233
+   63          -897.030081
+   64          -897.215237
+   65          -897.176850
+   66          -897.109401
+   67          -897.318191
+   69          -897.177230
+   70          -897.066286
+   71          -896.999095
+   72          -897.215140
+   73          -897.177198
+   75          -896.993728
+   77          -897.196072
+   78          -897.051060
+   79          -897.060225
+   80          -897.109379
+   81          -897.073243
+   82          -897.215385
+   83          -897.318245
+   85          -897.061859
+   86          -897.215091
+   88          -897.318224
+   90          -897.177290
+   91          -897.196577
+   92          -896.930037
+   94          -897.244112
+   95          -896.998938
+   96          -896.998475
+   97          -897.262500
+   99          -896.926124
+  100          -897.177066
+  101          -897.244450
+  102          -897.177299
+  103          -896.953138
+  107          -896.998982
+  108          -897.318141
+  110          -897.318093
+  111          -897.054578
+  112          -897.109089
+  114          -897.003637
+  115          -897.177142
+  117          -897.044293
+  118          -897.215081
+  119          -897.317801
+  120          -896.859043
+  121          -897.215354
+  123          -897.196471
+  124          -897.214621
+  125          -897.013222
+
+Finish 3D structure initialization job at  2021-02-23 18:45:11.664801
+Wall time of initialization job:                                62.35 sec.

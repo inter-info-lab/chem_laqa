@@ -1,0 +1,15 @@
+[Molecule]
+
+smiles = "CC(=O)N[C@H](C(=O)NC)C"
+
+[Initial geometry]
+
+popsize = 100
+cntmax = 300
+seed = 0
+optsteps = 100
+
+#xTB GFN2-xTB
+energy_function = "xtb"
+#xtb_call = "/home/z43901k/data/bin/xtb/6.4.0/bin/xtb"
+gfn = "2"
