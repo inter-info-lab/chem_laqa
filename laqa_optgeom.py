@@ -282,6 +282,7 @@ def LAQA_print_summary(input_params, mols, opt_struct_list):
 
     # Physical constant
     hartree2eV = 27.21138602
+    hartree2kcalmol = 627.503
 
     print("\nOptimized structure list (unsorted)")
     print("{:>10} {:>20} {:>20}".format("Struct. ID", "Total energy [au]", "Total energy [eV]"))
@@ -289,9 +290,14 @@ def LAQA_print_summary(input_params, mols, opt_struct_list):
         print("{:>10} {:>20.8f} {:>20.8f}".format(id, energy, energy*hartree2eV))
 
     print("\nOptimized structure list (sorted by lower energy)")
-    print("{:>10} {:>20} {:>20}".format("Struct. ID", "Total energy [au]", "Total energy [eV]"))
+    print("{:>10} {:>20} {:>20} {:>20} {:>22}".format("Struct. ID", "Total energy [au]",
+                                                      "Total energy [eV]", "Rel. energy [eV]",
+                                                      "Rel. energy [kcal/mol]"))
+    id, energy_min = sorted(opt_struct_list.items(), key=lambda x: x[1])[0]
     for id, energy in sorted(opt_struct_list.items(), key=lambda x: x[1]):
-        print("{:>10} {:>20.8f} {:>20.8f}".format(id, energy, energy*hartree2eV))
+        print("{:>10} {:>20.8f} {:>20.8f} {:>20.8f} {:>22.3f}".format(id, energy, energy*hartree2eV, 
+                                                                      (energy-energy_min)*hartree2eV, 
+                                                                      (energy-energy_min)*hartree2kcalmol))
 
     out_csv_path = input_params['dir_out'] + '/' + input_params['csv_out']
     with open(out_csv_path, "w") as f:
