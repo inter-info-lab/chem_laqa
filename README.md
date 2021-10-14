@@ -1,5 +1,8 @@
-# chem_laqa
-Efficient search for energetically favorable molecular conformations via gray-box optimization
+# LAQA confopt
+Coformation search code and global geometry optimization code using Look Ahead based on Quadratic Approximation (LAQA) method
+
+@Author: Michio Katouda (RIST) base on the LAQA code by Kei Terayama (Univ. Tokyo, RIKEN AIP, and Kyoto Univ.)
+@e-mail: katouda@rist.or.jp
 
 #  Requirements 
 1. [Python] (https://www.anaconda.com/download/)
@@ -18,18 +21,18 @@ Efficient search for energetically favorable molecular conformations via gray-bo
 
 # How to run LAQA confopt job
 
-## Conformation optimization of Alanine dipeptide with GFN2-xTB
+# Conformation optimization of Alanine dipeptide with GFN2-xTB
 1. Move working dirctory
    $ cd ./examples/laqa_confopt/ala-dip-100_uff_gfn2-xtb
 2. Set environmental variables for xTB code (bash or ksh cases).
    $ export OMP_NUM_THREADS=8
    $ export OMP_STACKSIZE=2GB
-3. Run python script laqa_confopt.py with input file laqa_confopt_uff_gfn2-xtb.inp
-   $ python /path/to/laqa_optconf_py3/laqa_confopt.py laqa_confopt_uff_gfn2-xtb.inp
+3. Run python script ForGetinput.py with input file laqa_confopt_uff_gfn2-xtb.inp
+   $ python /path/to/laqa_optconf_py3/ForGetinput.py laqa_confopt_uff_gfn2-xtb.inp
 
-## Conformation optimization of Alanine dipeptide with wB97XD/6-31G(d)
-(Note: Instalattion of Gaussian 16 and modification of input file laqa_confopt_uff_wb97xd-6-31gd.inp required)
+# Conformation optimization of Alanine dipeptide with wB97XD/6-31G(d)
+# (Note: Instalattion of Gaussian 16 and modification of input file laqa_confopt_uff_wb97xd-6-31gd.inp required)
 1. Move working dirctory
    $ cd ./examples/laqa_confopt/ala-dip-100_uff_wb97xd
-2. Run python script laqa_confopt.py with input file laqa_confopt_uff_wb97xd-6-31gd.inp
-   $ python /path/to/laqa_optconf_py3/laqa_confopt.py laqa_confopt_uff_wb97xd-6-31gd.inp
+2. Run python script ForGetinput.py with input file laqa_confopt_uff_wb97xd-6-31gd.inp
+   $ python /path/to/laqa_optconf_py3/ForGetinput.py laqa_confopt_uff_wb97xd-6-31gd.inp
