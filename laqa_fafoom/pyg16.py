@@ -120,12 +120,12 @@ class g16Object():
         os.environ['GAUSS_SCRDIR'] = self.gauss_scrdir
         #print(os.environ['GAUSS_EXEDIR'])
         #print(os.environ['GAUSS_SCRDIR'])
-        g16 = subprocess.Popen(
-           "$GAUSS_EXEDIR/g16 Gau_molecule.com",
+        g16 = subprocess.Popen(     \
+           "$GAUSS_EXEDIR/g16 Gau_molecule.com", \
             stdout=subprocess.PIPE, shell=True)
-        out = subprocess.Popen(
-            ['cat'], stdin=g16.stdout,
-            stdout=open('result.out', 'w'), shell=True)
+        out = subprocess.Popen( \
+            ['cat'], stdin=g16.stdout, \
+            stdout=open('result.out', 'w'), shell=True) 
         g16.wait()
         out.wait()
 
@@ -144,8 +144,8 @@ class g16Object():
         #    killfile.close()
 
         SCF_conv_key  = "SCF Done"
-        coord_bgn_key = "Input orientation"
-        coord_end_key = "Distance matrix (angstroms)"
+        coord_bgn_key = "Standard orientation"
+        coord_end_key = "Rotational constants (GHZ)"
         grad_bgn_key = "Forces (Hartrees/Bohr)"
         grad_end_key = "Cartesian Forces"
 

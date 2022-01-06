@@ -31,18 +31,18 @@ def LAQA_read_input(param_file):
     input_params_default = {'dir_inp': os.getcwd(), 'sdf_inp': 'initial_structures.sdf',
                             'sdf_out': 'optimized_structures.sdf',
                             'csv_out': 'optimized_structures.csv',
-                            'struct_conv': 50, 
+                            'struct_conv': 10, 
                             'pool_begin': None, 'pool_end': None,
                             'macro_opt_cycle': 1000, 'micro_opt_cycle': 5,
                             'thr_econv': 5.0e-4, 'thr_fconv': 1.0e-6,
                             'printlevel': 0, 'energy_function': 'xtb',
-                            'gauss_exedir': '/home/center/opt/x86_64/apps/gaussian16/c01/g16',
+                            'gauss_exedir': '/fefs/opt/x86_64/Gaussian/g16/g16',
                             'gauss_scrdir': os.getcwd(), 'g16_template': 'g16.template',
                             'qcmethod' : 'pm6',
                             'xtb_call': 'xtb', 'gfn': '2',
                             'charge': 0, 'mult': 1,
                             'solvmethod': None, 'solvent': 'water',
-                            'nprocs': 1, 'memory': '2GB'}
+                            'nprocs': 1, 'memory': '3GB'}
 
     input_params = file2dict(param_file, ['LAQA settings'])
     input_params = set_default(input_params, input_params_default)
