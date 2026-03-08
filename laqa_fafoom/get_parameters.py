@@ -118,8 +118,8 @@ def template_sdf(smiles, distance_cutoff_1, distance_cutoff_2):
     while sdf_check:
         mol = Chem.MolFromSmiles(smiles)
         mol = Chem.AddHs(mol)
-        AllChem.EmbedMolecule(mol)
-        AllChem.UFFOptimizeMolecule(mol)
+        AllChem.EmbedMolecule(mol,useRandomCoords=True)
+        AllChem.UFFOptimizeMolecule(mol, maxIters=1000)
         Chem.SDWriter('mol.sdf').write(mol)
         sdf_string = Chem.MolToMolBlock(mol)
         check = check_geo_sdf(sdf_string, distance_cutoff_1, distance_cutoff_2)

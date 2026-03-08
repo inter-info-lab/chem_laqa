@@ -12,7 +12,7 @@ import random
 import numpy as np
 
 
-def LAQA_initgeom(param_file):
+def LAQA_initgeom(param_file, SMILES=""):
 
     t_init_bgn = time.time()
     print("\nStart 3D structure initialization job at ",
@@ -25,7 +25,7 @@ def LAQA_initgeom(param_file):
 
     params = file2dict(param_file, ['Initial geometry'])
 
-    dict_default = {'popsize': 100, 'max_iter': 30,
+    dict_default = {'popsize': 10, 'max_iter': 30,
                     'iter_limit_conv': 20, 'energy_diff_conv': 0.001,
                     'cnt_max': 500, 'seed': None,
                     'energy_function': 'ff',
@@ -56,6 +56,11 @@ def LAQA_initgeom(param_file):
     # Set up template molecule.
 
     mol = MoleculeDescription(param_file)
+
+################To get a SMILES string from an augment#########
+    if SMILES != "":
+        mol.smiles = SMILES
+###############################################################
 
     print("SMILES: ", mol.smiles)
     print("distance_cutoff_1: ", mol.distance_cutoff_1)

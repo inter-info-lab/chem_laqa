@@ -57,6 +57,9 @@ class xTBObject():
         Raises:
             OSError: if xtbin.mol not present in the working directory
         """
+        #for defining OMP_STACKSIZE
+        os.environ["OMP_STACKSIZE"] = "5GB"
+
         success = False
         if os.path.exists('xtbin.mol') is False:
             raise OSError('Required input file not present.')

@@ -19,14 +19,15 @@ from laqa_fafoom.initgeom import LAQA_initgeom
 from laqa_fafoom.laqa_optgeom import LAQA_optgeom
 
 
-def LAQA_confopt_main(param_file):
+def LAQA_confopt_main(param_file, SMILES=""):
 
     t_laqaopt_bgn = time.time()
     print("\nStart LAQA conforation searh job at ",
           datetime.datetime.now(), '\n')
 
-    LAQA_initgeom(param_file)
+    LAQA_initgeom(param_file, SMILES)
     LAQA_optgeom(param_file)
+	
 
     t_laqaopt_end = time.time()
     print("\nFinish LAQA conforation searh job at ",
@@ -35,7 +36,3 @@ def LAQA_confopt_main(param_file):
           .format(t_laqaopt_end - t_laqaopt_bgn))
 
 
-#if __name__ == '__main__':
-#
-#    param_file = sys.argv[1]
-#    LAQA_confopt_main(param_file)
