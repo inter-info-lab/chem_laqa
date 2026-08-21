@@ -12,30 +12,49 @@ e-mail: katouda@rist.or.jp
 """
 
 import sys
+import os
 import time
 import datetime
+import argparse
 
-from laqa_fafoom.initgeom import LAQA_initgeom
-from laqa_fafoom.laqa_optgeom import LAQA_optgeom
-
-
-def LAQA_confopt_main(param_file):
-
-    t_laqaopt_bgn = time.time()
-    print("\nStart LAQA conforation searh job at ",
-          datetime.datetime.now(), '\n')
-
-    LAQA_initgeom(param_file)
-    LAQA_optgeom(param_file)
-
-    t_laqaopt_end = time.time()
-    print("\nFinish LAQA conforation searh job at ",
-          datetime.datetime.now())
-    print("Wall time of LAQA conformation optimization job: {:20.2f} sec."\
-          .format(t_laqaopt_end - t_laqaopt_bgn))
+try:
+    from qcforever import laqa_fafoom
+except ImportError:
+    HAS_QCFOREVER = False
+    import laqa_fafoom
+else:
+    HAS_QCFOREVER = True
 
 
-#if __name__ == '__main__':
-#
-#    param_file = sys.argv[1]
-#    LAQA_confopt_main(param_file)
+def main():
+
+    #param_file = sys.argv[1]
+    parser = argparse.ArgumentParser(
+        description='Generate and search energetically favorable molecular conformations via LAQA optimization'
+    )
+    parser.add_argument("input", help="Input file")
+    parser.add_argument(
+        "-v", "--verbose", action='store_true',
+        help="verbose mode"
+    )
+    args = parser.parse_args()
+    #print(args)
+
+    param_file = args.input
+    if os.path.exists(param_file):
+
+        t_laqaopt_bgn = time.time()
+        print(f"\nStart LAQA conforation searh job at {datetime.datetime.now()}")
+
+        laqa_fafoom.initgeom.LAQA_initgeom(param_file)
+        laqa_fafoom.laqa_optgeom.LAQA_optgeom(param_file)
+
+        t_laqaopt_end = time.time()
+        print(f"\nFinish LAQA conforation searh job at {datetime.datetime.now()}")
+        print(f"Wall time of LAQA conformation optimization job: {t_laqaopt_end - t_laqaopt_bgn:20.2f} sec.")
+    else:
+        print(f'{param_file} is not exists.')
+
+
+if __name__ == "__main__":
+    sys.exit(main())

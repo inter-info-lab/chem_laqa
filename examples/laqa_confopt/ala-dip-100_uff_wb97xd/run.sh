@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export OMP_STACKSIZE=1GB
+
+. ~/miniforge3/etc/profile.d/conda.sh
+conda activate py311-chemlaqa
+
+laqaconfopt laqa_confopt_uff_wb97xd-6-31gd.inp >& output.log

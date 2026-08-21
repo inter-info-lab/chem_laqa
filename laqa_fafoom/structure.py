@@ -1,4 +1,4 @@
-#    Copyright 2015 Adriana Supady
+#laqa_fafoom.utilities    Copyright 2015 Adriana Supady
 #
 #    This file is part of fafoom.
 #
@@ -18,30 +18,16 @@
 import os
 from copy import deepcopy
 
-from laqa_fafoom.get_parameters import (
-    create_dof_object,
-    get_atoms_and_bonds,
-    get_positions,
-    template_sdf
-)
-#from genetic_operations import crossover
-#from pyaims import AimsObject
-#from pynwchem import NWChemObject
-#from pyorca import OrcaObject
-from laqa_fafoom.pyg16 import g16Object
-from laqa_fafoom.pyxtb import xTBObject
-from laqa_fafoom.pyff import FFObject
-
-from laqa_fafoom.utilities import (
-    check_geo_sdf,
-    file2dict,
-    lowest_cartesian,
-    mirror_sdf,
-    set_default,
-    xyz2sdf
-)
 import random
 #from random import randint, choice
+
+try:
+    from qcforever import laqa_fafoom
+except ImportError:
+    HAS_QCFOREVER = False
+    import laqa_fafoom
+else:
+    HAS_QCFOREVER = True
 
 
 class MoleculeDescription:
@@ -53,7 +39,7 @@ class MoleculeDescription:
         or read keyword args. The keyword args overwrite the file values."""
         params = {}
         if parameter_file is not None:
-            params = file2dict(parameter_file, ['Molecule'])
+            params = laqa_fafoom.utilities.file2dict(parameter_file, ['Molecule'])
             new_names_dict = {'smile': 'smiles',
                               'smart_torsion': 'smarts_torsion',
                               'filter_smart_torsion': 'filter_smarts_torsion',
@@ -74,10 +60,12 @@ class MoleculeDescription:
         dict_default = {'rmsd_type': "cartesian", 'distance_cutoff_1': 1.3,
                         'distance_cutoff_2': 2.15, 'rmsd_cutoff_uniq': 0.2,
                         'chiral': True, 'optimize_torsion': True,
+                        'template_max_attempts': 20,
+                        'template_opt_steps': 200,
                         'smarts_torsion':
                         "[*]~[!$(*#*)&!D1]-&!@[!$(*#*)&!D1]~[*]"}
 
-        params = set_default(params, dict_default)
+        params = laqa_fafoom.utilities.set_default(params, dict_default)
 
         for key in params:
             if not hasattr(self, str(key)):
@@ -127,7 +115,7 @@ class MoleculeDescription:
     def get_parameters(self):
         """Assign permanent attributes (number of atoms, number of bonds and
         degrees of freedom related attributes) to the object."""
-        self.atoms, self.bonds = get_atoms_and_bonds(self.smiles)
+        self.atoms, self.bonds = laqa_fafoom.get_parameters.get_atoms_and_bonds(self.smiles)
         self_copy = deepcopy(self)
         dof_names = []
         for attr, value in self_copy.__dict__.items():
@@ -137,20 +125,22 @@ class MoleculeDescription:
                 for attr, value in self_copy.__dict__.items():
                     if type_of_dof in str(attr).split('_'):
                         linked_attr[attr] = value
-                pos = get_positions(type_of_dof, self.smiles, **linked_attr)
+                pos = laqa_fafoom.get_parameters.get_positions(type_of_dof, self.smiles, **linked_attr)
                 if len(pos) != 0:
                     setattr(self, type_of_dof, pos)
                     dof_names.append(type_of_dof)
                 else:
-                    print("The degree to optimize: "+str(type_of_dof) +
-                                 " hasn't been found.")
+                    print(f"The degree to optimize: {str(type_of_dof)} hasn't been found.")
         setattr(self, "dof_names", dof_names)
 
-    def create_template_sdf(self):
+    def create_template_sdf(self, random_seed=None):
         """Assign new attribute (template_sdf_string) to the object."""
-        self.template_sdf_string = template_sdf(self.smiles,
+        self.template_sdf_string = laqa_fafoom.get_parameters.template_sdf(self.smiles,
                                                 self.distance_cutoff_1,
-                                                self.distance_cutoff_2)
+                                                self.distance_cutoff_2,
+                                                self.template_max_attempts,
+                                                self.template_opt_steps,
+                                                random_seed)
 
 
 class Structure:
@@ -170,7 +160,7 @@ class Structure:
             self.index = Structure.index
             dof = []
             for i in self.mol_info.dof_names:
-                new_obj = create_dof_object(str(i), getattr(self.mol_info, i))
+                new_obj = laqa_fafoom.get_parameters.create_dof_object(str(i), getattr(self.mol_info, i))
                 dof.append(new_obj)
             setattr(self, "dof", dof)
 
@@ -275,7 +265,7 @@ class Structure:
 
     def is_geometry_valid(self):
         """Return True if the geometry is valid."""
-        check = check_geo_sdf(self.sdf_string, self.mol_info.distance_cutoff_1,
+        check = laqa_fafoom.utilities.check_geo_sdf(self.sdf_string, self.mol_info.distance_cutoff_1,
                               self.mol_info.distance_cutoff_2)
         return check
 
@@ -309,13 +299,13 @@ class Structure:
                 linked_strings[n_str] = obj2.initial_sdf_string
 
             if not obj1.mol_info.chiral:
-                n_str = str(mirror_sdf(obj2.sdf_string))
-                linked_strings[n_str] = mirror_sdf(obj2.sdf_string)
+                n_str = str(laqa_fafoom.utilities.mirror_sdf(obj2.sdf_string))
+                linked_strings[n_str] = laqa_fafoom.utilities.mirror_sdf(obj2.sdf_string)
                 if hasattr(obj2, "initial_sdf_string"):
-                    n_str = str(mirror_sdf(obj2.initial_sdf_string))
-                    linked_strings[n_str] = mirror_sdf(obj2.initial_sdf_string)
+                    n_str = str(laqa_fafoom.utilities.mirror_sdf(obj2.initial_sdf_string))
+                    linked_strings[n_str] = laqa_fafoom.utilities.mirror_sdf(obj2.initial_sdf_string)
 
-            bestrms = lowest_cartesian(obj1.sdf_string, obj2.sdf_string,
+            bestrms = laqa_fafoom.utilities.lowest_cartesian(obj1.sdf_string, obj2.sdf_string,
                                        **linked_strings)
 
             if bestrms > obj1.mol_info.rmsd_cutoff_uniq:
@@ -382,7 +372,7 @@ class Structure:
         nwchem_object.clean()
         self.energy = nwchem_object.get_energy()
         self.initial_sdf_string = self.sdf_string
-        self.sdf_string = xyz2sdf(nwchem_object.get_xyz_string_opt(),
+        self.sdf_string = laqa_fafoom.utilities.xyz2sdf(nwchem_object.get_xyz_string_opt(),
                                   self.mol_info.template_sdf_string)
 
         for dof in self.dof:
@@ -399,7 +389,7 @@ class Structure:
         orca_object.clean()
         self.energy = orca_object.get_energy()
         self.initial_sdf_string = self.sdf_string
-        self.sdf_string = xyz2sdf(orca_object.get_xyz_string_opt(),
+        self.sdf_string = laqa_fafoom.utilities.xyz2sdf(orca_object.get_xyz_string_opt(),
                                   self.mol_info.template_sdf_string)
 
         for dof in self.dof:
@@ -410,7 +400,7 @@ class Structure:
     def perform_g16(self, gauss_exedir, **kwargs):
         # Generate the Gaussian 16 input, run Gaussian 16 calculation, 
         # assign new attributes and update attribute values.
-        g16_object = g16Object(self.sdf_string, gauss_exedir, **kwargs)
+        g16_object = laqa_fafoom.pyg16.g16Object(self.sdf_string, gauss_exedir, **kwargs)
         g16_object.clean()
         g16_object.generate_input()
         g16_object.run_g16()
@@ -429,7 +419,7 @@ class Structure:
     def perform_xtb(self, xtb_call, jobtype='opt', **kwargs):
         # Generate the xTB input, run xTB calculation, assign
         # new attributes and update attribute values.
-        xtb_object = xTBObject(self.sdf_string, xtb_call, jobtype, **kwargs)
+        xtb_object = laqa_fafoom.pyxtb.xTBObject(self.sdf_string, xtb_call, jobtype, **kwargs)
         xtb_object.clean()
         xtb_object.generate_input()
         xtb_object.run_xtb()
@@ -448,7 +438,7 @@ class Structure:
     def perform_ff(self, **kwargs):
         # Generate the force-field input, run force_field calculation, assign
         # new attributes and update attribute values.
-        ff_object = FFObject(self.sdf_string, **kwargs)
+        ff_object = laqa_fafoom.pyff.FFObject(self.sdf_string, **kwargs)
         ff_object.run_ff()
         self.energy = ff_object.get_energy()
         self.initial_sdf_string = self.sdf_string

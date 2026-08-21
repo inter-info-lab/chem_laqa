@@ -11,7 +11,7 @@ optsteps = 100
 
 #xTB GFN-FF
 energy_function = "xtb"
-#xtb_call = "/home/z43901k/data/bin/xtb/6.4.0/bin/xtb"
+#xtb_call = "~/bin/xtb"
 gfn = "ff"
 
 [LAQA settings]
@@ -30,5 +30,5 @@ mult = 1
 
 #xTB settings
 energy_function = "xtb"
-#xtb_call = "/home/z43901k/data/bin/xtb/6.4.0/bin/xtb"
+#xtb_call = "~/bin/xtb"
 gfn = "2"

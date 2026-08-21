@@ -31,7 +31,7 @@ mult = 1
 
 # Gaussian settings
 energy_function = "g16"
-gauss_exedir = "/home/center/opt/x86_64/apps/gaussian16/c01/g16"
+gauss_exedir = "/apl/gaussian/16c02/g16"
 qcmethod = 'wb97xd/6-31g(d)'
-nprocs = 20
-memory = '128GB'
+nprocs = 16
+memory = '32GB'

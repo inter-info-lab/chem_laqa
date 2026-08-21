@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "chem_laqa"
+version = "0.1.0"
+description = "Efficient search for energetically favorable molecular conformations via gray-box optimization"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+	{ name = "Michio Katouda", email = "katouda@rist.or.jp" },
+	{ name = "Masato Sumita", email = "sumita@riken.jp" },	
+]
+requires-python = ">=3.8"
+dependencies = [
+    'rdkit>=2023.3.3',
+]
+
+
+[project.scripts]
+laqaconfopt = "laqa_fafoom.laqa_confopt:main"
+laqainitgeom = "laqa_fafoom.initgeom:main"
+laqaoptgeom = "laqa_fafoom.laqa_optgeom:main"
+
+[project.urls]
+Repository = "https://github.com/inter-info-lab/chem_laqa"
+Issues = "https://github.com/inter-info-lab/chem_laqa/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["laqa_fafoom"]

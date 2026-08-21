@@ -4,6 +4,14 @@ import glob
 import os
 import subprocess
 
+try:
+    from qcforever import laqa_fafoom
+except ImportError:
+    HAS_QCFOREVER = False
+    import laqa_fafoom
+else:
+    HAS_QCFOREVER = True
+
 hartree2eV = 27.21138602
 hartree2kcalmol = 627.503
 
@@ -12,7 +20,7 @@ class g16Object():
     '''Create and handle Gaussian 16 objects.'''
     def __init__(self, sdf_string, gauss_exedir, gauss_scrdir=os.getcwd(),
                  nprocs=1, memory='1GB', jobtype='opt', charge=0, mult=1,
-                 qcmethod='pm6', optsteps=200, solvmethod=None, solvent='water',
+                 qcmethod='pm6', optsteps=200, solvmethod=None, solvent=None,
                  sdf_out='optimized_structures.sdf'):
         """Initialize the g16Object.
 
@@ -29,7 +37,7 @@ class g16Object():
             qcmethod     (default='pm6')
             optsteps     (default=500)
             solvmethod   (default=None)
-            solvent      (default='water')
+            solvent      (default=None)
             sdf_out      (default='optimized_structures.sdf')
         Raises:
             KeyError: if the commandline or memory is not defined
@@ -48,49 +56,17 @@ class g16Object():
         self.solvent = solvent
         self.sdf_out = sdf_out
 
-    def get_ind_from_sdfline(self, sdf_line):
-        """Extract the indicies from the sdf string (for molecules with more than
-        99 atoms)"""
-        l = len(sdf_line.split()[0])
-        if l < 4:
-            ind1 = int(sdf_line.split()[0])
-            ind2 = int(sdf_line.split()[1])
-        else:
-            list_ind = list(sdf_line.split()[0])
-            if len(list_ind) == 5:
-                ind1 = int(list_ind[0]+list_ind[1])
-                ind2 = int(list_ind[2]+list_ind[3]+list_ind[4])
-            if len(list_ind) == 6:
-                ind1 = int(list_ind[0]+list_ind[1]+list_ind[2])
-                ind2 = int(list_ind[3]+list_ind[4]+list_ind[5])
-
-        return ind1, ind2
-
-    def sdf2xyz(self):
-        """Convert a sdf string to a xyz string."""
-        atoms = self.get_ind_from_sdfline(self.sdf_string.split('\n')[3])[0]
-        coord = [str(atoms)+('\n')]
-        for i in range(4, 4+atoms):
-            x = float(self.sdf_string.split('\n')[i].split()[0])
-            y = float(self.sdf_string.split('\n')[i].split()[1])
-            z = float(self.sdf_string.split('\n')[i].split()[2])
-            name = self.sdf_string.split('\n')[i].split()[3]
-            coord.append('\n%2s%10.4f%10.4f%10.4f' % (name, x, y, z))
-        coord.append('\n')
-        xyz_string = ''.join(coord)
-        return xyz_string
-
     def generate_input(self):
         """Create input files for g16."""
         if self.jobtype == 'gradient':
             jobtype = 'force'
         else:
             jobtype = 'opt=(maxcycle={})'.format(self.optsteps)
-        xyz_string = self.sdf2xyz()
+        xyz_string = laqa_fafoom.utilities.sdf2xyz(self.sdf_string)
         coord = xyz_string.split('\n')
         s = '%nprocshared=' + str(self.nprocs) + '\n' + \
             '%mem=' + self.memory + '\n' + \
-            '#n ' + self.qcmethod + ' ' + jobtype
+            '#n ' + self.qcmethod + ' ' + jobtype + ' NoSymm'
         if self.solvmethod is not None:
             s += ' scrf=({}, solvent={})'.format(self.solvmethod, self.solvent)
 
@@ -115,17 +91,17 @@ class g16Object():
         """
         success = False
         if os.path.exists('Gau_molecule.com') is False:
-            raise OSError("Required input file not present.")
+            raise OSError("Required input file is not present.")
         os.environ['GAUSS_EXEDIR'] = self.gauss_exedir
         os.environ['GAUSS_SCRDIR'] = self.gauss_scrdir
-        #print(os.environ['GAUSS_EXEDIR'])
-        #print(os.environ['GAUSS_SCRDIR'])
-        g16 = subprocess.Popen(
-           "$GAUSS_EXEDIR/g16 Gau_molecule.com",
+        print(os.environ['GAUSS_EXEDIR'])
+        print(os.environ['GAUSS_SCRDIR'])
+        g16 = subprocess.Popen(     \
+           "$GAUSS_EXEDIR/g16 Gau_molecule.com", \
             stdout=subprocess.PIPE, shell=True)
-        out = subprocess.Popen(
-            ['cat'], stdin=g16.stdout,
-            stdout=open('result.out', 'w'), shell=True)
+        out = subprocess.Popen( \
+            ['cat'], stdin=g16.stdout, \
+            stdout=open('result.out', 'w'), shell=True) 
         g16.wait()
         out.wait()
 
@@ -144,8 +120,10 @@ class g16Object():
         #    killfile.close()
 
         SCF_conv_key  = "SCF Done"
-        coord_bgn_key = "Input orientation"
-        coord_end_key = "Distance matrix (angstroms)"
+        #coord_bgn_key = "Standard orientation"
+        coord_bgn_key = "Input orientation"        
+        #coord_end_key = "Rotational constants (GHZ)"
+        coord_end_key = "Distance matrix"
         grad_bgn_key = "Forces (Hartrees/Bohr)"
         grad_end_key = "Cartesian Forces"
 
@@ -261,7 +239,7 @@ class g16Object():
 
 def g16_exec(sdf_string, gauss_exedir, gauss_scrdir=os.getcwd(),
              nprocs=1, memory='1GB', jobtype='opt', charge=0, mult=1,
-             qcmethod='pm6', optsteps=200, solvmethod=None, solvent='water',
+             qcmethod='pm6', optsteps=200, solvmethod=None, solvent=None,
              sdf_out='optimized_structures.sdf'):
 
     g16_object = g16Object(sdf_string, gauss_exedir, gauss_scrdir, nprocs, memory,
@@ -289,7 +267,8 @@ if __name__ == '__main__':
     '  1  2  1  0  0  0  0\n' + \
     '  1  3  1  0  0  0  0\n' + \
     'M  END\n$$$$'
-    gauss_exedir = '/home/center/opt/x86_64/apps/gaussian16/c01/g16'
+    gauss_exedir = '/fefs/opt/x86_64/Gaussian/g16'
+    gauss_exedir = '/apl/gaussian/16c02/g16'
     gauss_scrdir = os.getcwd()
     nprocs = 8
     memory = '2GB'
@@ -298,10 +277,10 @@ if __name__ == '__main__':
     #qcmethod = 'b3lyp/sto-3g'
     qcmethod = 'pm6'
     optsteps = 50
-    selvmethod = None
+    solvmethod = None
     solvent = None
-    solvmethod = 'pcm'
-    solvent = 'water'
+    #solvmethod = 'pcm'
+    #solvent = 'water'
 
     print('initial coord')
     print(sdf_string)

@@ -21,13 +21,13 @@ from copy import copy
 from random import choice
 from rdkit import Chem
 
-from laqa_fafoom.utilities import ig, cleaner, get_vec, tor_rmsd, find_one_in_list
-from laqa_fafoom.measure import (
-    dihedral_measure,
-    dihedral_set,
-    pyranosering_measure,
-    pyranosering_set
-)
+try:
+    from qcforever import laqa_fafoom
+except ImportError:
+    HAS_QCFOREVER = False
+    import laqa_fafoom
+else:
+    HAS_QCFOREVER = True
 
 #from genetic_operations import mutation
 
@@ -76,8 +76,8 @@ class Torsion(DOF):
 
                 for x in reversed(range(len(torsion))):
                     for y in reversed(range(len(custom))):
-                        ix1, ix2 = ig(1)(torsion[x]), ig(2)(torsion[x])
-                        iy1, iy2 = ig(1)(custom[y]), ig(2)(custom[y])
+                        ix1, ix2 = deg_of_freedom.ig(1)(torsion[x]), deg_of_freedom.ig(2)(torsion[x])
+                        iy1, iy2 = deg_of_freedom.ig(1)(custom[y]), deg_of_freedom.ig(2)(custom[y])
                         if (ix1 == iy1 and ix2 == iy2) or (ix1 == iy2 and
                                                            ix2 == iy1):
                             to_del_bef_custom.append(x)
@@ -87,7 +87,7 @@ class Torsion(DOF):
                                   if i not in set(to_del_bef_custom)]
                 torsion = custom_torsion
 
-            positions = cleaner(torsion)
+            positions = laqa_fafoom.utilities.cleaner(torsion)
 
         return positions
 
@@ -112,7 +112,7 @@ class Torsion(DOF):
             generated
         """
         if len(weights) == len(Torsion.values_options):
-            self.values = [Torsion.values_options[find_one_in_list(sum(
+            self.values = [Torsion.values_options[laqa_fafoom.utilities.find_one_in_list(sum(
                            weights), weights)]
                            for i in range(len(self.positions))]
         else:
@@ -131,7 +131,7 @@ class Torsion(DOF):
         if values_to_set is not None:
             self.values = values_to_set
         for i in range(len(self.positions)):
-            string = dihedral_set(string, self.positions[i],
+            string = laqa_fafoom.measure.dihedral_set(string, self.positions[i],
                                   self.values[i])
         return string
 
@@ -156,7 +156,7 @@ class Torsion(DOF):
         """
         updated_values = []
         for i in range(len(self.positions)):
-            updated_values.append(dihedral_measure(string,
+            updated_values.append(laqa_fafoom.measure.dihedral_measure(string,
                                                    self.positions[i]))
         self.values = updated_values
 
@@ -171,16 +171,16 @@ class Torsion(DOF):
         """
 
         values = []
-        values.append(tor_rmsd(2, get_vec(self.values, other.values)))
+        values.append(laqa_fafoom.utilities.tor_rmsd(2, laqa_fafoom.utilities.get_vec(self.values, other.values)))
 
         if hasattr(other, "initial_values"):
-            values.append(tor_rmsd(2, get_vec(self.values,
+            values.append(laqa_fafoom.utilities.tor_rmsd(2, laqa_fafoom.utilities.get_vec(self.values,
                                               other.initial_values)))
         if not chiral:
-            values.append(tor_rmsd(2, get_vec(self.values,
+            values.append(laqa_fafoom.utilities.tor_rmsd(2, laqa_fafoom.utilities.get_vec(self.values,
                                               [-1*i for i in other.values])))
             if hasattr(other, "initial_values"):
-                values.append(tor_rmsd(2, get_vec(self.values, [-1*i for i in
+                values.append(laqa_fafoom.utilities.tor_rmsd(2, laqa_fafoom.utilities.get_vec(self.values, [-1*i for i in
                                                   other.initial_values])))
         if min(values) > threshold:
             return False
@@ -292,7 +292,7 @@ class PyranoseRing(DOF):
 
     def get_weighted_values(self, weights):
         if len(weights) == len(PyranoseRing.values_options):
-            self.values = [PyranoseRing.values_options[find_one_in_list(sum(
+            self.values = [PyranoseRing.values_options[laqa_fafoom.utilities.find_one_in_list(sum(
                            weights), weights)]
                            for i in range(len(self.positions))]
         else:
@@ -307,14 +307,14 @@ class PyranoseRing(DOF):
                                                      int(self.values[i]))][:5]
             val_ang = PyranoseRing.dict_for_ring_ang[str(
                                                      int(self.values[i]))][:5]
-            string = pyranosering_set(string, self.positions[i], val_dih,
+            string = laqa_fafoom.measure.pyranosering_set(string, self.positions[i], val_dih,
                                       val_ang)
         return string
 
     def update_values(self, string):
         updated_values = []
         for i in range(len(self.positions)):
-            updated_values.append(pyranosering_measure(string,
+            updated_values.append(laqa_fafoom.measure.pyranosering_measure(string,
                                   self.positions[i],
                                   PyranoseRing.dict_for_ring_dih))
         self.values = updated_values
@@ -329,7 +329,7 @@ class PyranoseRing(DOF):
     def is_equal(self, other, threshold, chiral=True):
         values = []
         tmp = []
-        for i in get_vec(self.values, other.values):
+        for i in laqa_fafoom.utilities.get_vec(self.values, other.values):
             if i == 0:
                 tmp.append(0)
             else:
@@ -337,7 +337,7 @@ class PyranoseRing(DOF):
         values.append(sum(tmp)/len(tmp))
         if hasattr(other, "initial_values"):
             tmp = []
-            for i in get_vec(self.values, other.initial_values):
+            for i in laqa_fafoom.utilities.get_vec(self.values, other.initial_values):
                 if i == 0:
                     tmp.append(0)
                 else:
@@ -360,7 +360,7 @@ class CisTrans(DOF):
                 raise ValueError("The smiles is invalid")
             pattern_cistrans = Chem.MolFromSmarts(smarts_cistrans)
             cistrans = list(mol.GetSubstructMatches(pattern_cistrans))
-            positions = cleaner(cistrans)
+            positions = laqa_fafoom.utilities.cleaner(cistrans)
         return positions
 
     def __init__(self, positions):
@@ -373,13 +373,13 @@ class CisTrans(DOF):
             self.values = values_to_set
 
         for i in range(len(self.positions)):
-            string = dihedral_set(string, self.positions[i], self.values[i])
+            string = laqa_fafoom.measure.dihedral_set(string, self.positions[i], self.values[i])
         return string
 
     def update_values(self, string):
         updated_values = []
         for i in range(len(self.positions)):
-            updated_values.append(dihedral_measure(string, self.positions[i]))
+            updated_values.append(laqa_fafoom.measure.dihedral_measure(string, self.positions[i]))
         self.values = updated_values
 
     def get_random_values(self):
@@ -388,7 +388,7 @@ class CisTrans(DOF):
 
     def get_weighted_values(self, weights):
         if len(weights) == len(CisTrans.values_options):
-            self.values = [CisTrans.values_options[find_one_in_list(sum(
+            self.values = [CisTrans.values_options[laqa_fafoom.utilities.find_one_in_list(sum(
                            weights), weights)]
                            for i in range(len(self.positions))]
         else:
@@ -405,19 +405,20 @@ class CisTrans(DOF):
 
     def is_equal(self, other, threshold, chiral=True):
         values = []
-        values.append(tor_rmsd(2, get_vec(self.values, other.values)))
+        values.append(laqa_fafoom.utilities.tor_rmsd(2, laqa_fafoom.utilities.get_vec(self.values, other.values)))
 
         if hasattr(other, "initial_values"):
-            values.append(tor_rmsd(2, get_vec(self.values,
+            values.append(laqa_fafoom.utilities.tor_rmsd(2, laqa_fafoom.utilities.get_vec(self.values,
                                               other.initial_values)))
 
         if not chiral:
-            values.append(tor_rmsd(2, get_vec(self.values,
+            values.append(laqa_fafoom.utilities.tor_rmsd(2, laqa_fafoom.utilities.get_vec(self.values,
                                               [-1*i for i in other.values])))
             if hasattr(other, "initial_values"):
-                values.append(tor_rmsd(2, get_vec(self.values,
+                values.append(laqa_fafoom.utilities.tor_rmsd(2, laqa_fafoom.utilities.get_vec(self.values,
                                        [-1*i for i in other.initial_values])))
         if min(values) > threshold:
             return False
         else:
             return True
+

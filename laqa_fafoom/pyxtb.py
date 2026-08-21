@@ -4,6 +4,14 @@ import glob
 import os
 import subprocess
 
+try:
+    from qcforever import laqa_fafoom
+except ImportError:
+    HAS_QCFOREVER = False
+    import laqa_fafoom
+else:
+    HAS_QCFOREVER = True
+
 hartree2eV = 27.21138602
 hartree2kcalmol = 627.503
 
@@ -45,26 +53,31 @@ class xTBObject():
 
     def generate_input(self):
         """Create input files for xTB."""
-        with open('xtbin.mol', 'w') as f:
-            f.write(self.sdf_string)
+        xyz_string = laqa_fafoom.utilities.sdf2xyz(self.sdf_string)
+        with open('xtbin.xyz', 'w') as f:
+            f.write(xyz_string)
 
     def run_xtb(self):
         """Run xTB and write output to 'result.out'. The optimized
-        geometry is written to 'xtbopt.mol'.
+        geometry is written to 'xtbopt.xyz'.
 
         Warning: this function uses subprocessing to invoke the run.
         The subprocess's shell is set to TRUE.
         Raises:
-            OSError: if xtbin.mol not present in the working directory
+            OSError: if xtbin.xyz not present in the working directory
         """
+        #for defining OMP_STACKSIZE
+        if "OMP_STACKSIZE" not in os.environ:
+            os.environ["OMP_STACKSIZE"] = "5G"
+        
         success = False
-        if os.path.exists('xtbin.mol') is False:
+        if os.path.exists('xtbin.xyz') is False:
             raise OSError('Required input file not present.')
 
         if self.jobtype == 'gradient':
             com_xtb = self.xtb_call \
-                      + ' --gfn{:>2} xtbin.mol --chrg {} --uhf {} --grad'\
-                          .format(self.gfn, self.charge, self.mult)
+                      + ' --gfn{:>2} xtbin.xyz --chrg {} --uhf {} --grad'\
+                          .format(self.gfn, self.charge, self.mult-1)
             if self.solvmethod is not None :
                 com_xtb += ' --alpb {}'.format(self.solvent)
             xtb = subprocess.Popen(com_xtb, stdout=subprocess.PIPE, shell=True)
@@ -86,8 +99,8 @@ class xTBObject():
 
         else:
             com_xtb = self.xtb_call \
-                      + ' --gfn{:>2} xtbin.mol --chrg {} --uhf {} --opt --cycles {}'\
-                          .format(self.gfn, self.charge, self.mult, self.optsteps)
+                      + ' --gfn{:>2} xtbin.xyz --chrg {} --uhf {} --opt --cycles {}'\
+                          .format(self.gfn, self.charge, self.mult-1, self.optsteps)
             if self.solvmethod is not None :
                 com_xtb += ' --alpb {}'.format(self.solvent)
             xtb = subprocess.Popen(com_xtb, stdout=subprocess.PIPE, shell=True)
@@ -117,8 +130,10 @@ class xTBObject():
                     energy = float(line.split()[3])
             self.energy = energy
 
-            with open('xtbopt.mol', 'r') as f:
-                self.sdf_string_opt = f.read()
+            with open('xtbopt.xyz', 'r') as f:
+                self.sdf_string_opt = laqa_fafoom.utilities.xyz2sdf(
+                    f.read(), self.sdf_string
+                )
                 success = True
 
         return success
@@ -196,6 +211,8 @@ class xTBObject():
             os.remove(f)
         for f in glob.glob("result.out"):
             os.remove(f)
+        for f in glob.glob(".xtboptok"):
+            os.remove(f)
 
 
 def xtb_exec(sdf_string, xtb_call, jobtype='opt', gfn='2',
@@ -233,7 +250,8 @@ if __name__ == '__main__':
     '  1  2  1  0  0  0  0\n' + \
     '  1  3  1  0  0  0  0\n' + \
     'M  END\n$$$$'
-    xtb_call = '~/data/bin/xtb/6.4.0/bin/xtb'
+    xtb_call = '~/anaconda3/bin/xtb'
+    xtb_call = 'xtb'    
     gfn = '2' #'1', '2', 'ff'
     charge = 0
     mult = 1

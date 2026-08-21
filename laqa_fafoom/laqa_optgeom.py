@@ -12,18 +12,22 @@ e-mail: katouda@rist.or.jp
 """
 
 import sys
-import os.path
+import os
 import subprocess
-import configparser
 import time
 import datetime
+import argparse
 
 import numpy as np
 from rdkit import Chem
 
-from laqa_fafoom.pyg16 import g16_exec
-from laqa_fafoom.pyxtb import xtb_exec
-from laqa_fafoom.utilities import file2dict, set_default
+try:
+    from qcforever import laqa_fafoom
+except ImportError:
+    HAS_QCFOREVER = False
+    import laqa_fafoom
+else:
+    HAS_QCFOREVER = True
 
 
 def LAQA_read_input(param_file):
@@ -31,21 +35,21 @@ def LAQA_read_input(param_file):
     input_params_default = {'dir_inp': os.getcwd(), 'sdf_inp': 'initial_structures.sdf',
                             'sdf_out': 'optimized_structures.sdf',
                             'csv_out': 'optimized_structures.csv',
-                            'struct_conv': 50, 
+                            'struct_conv': 10, 
                             'pool_begin': None, 'pool_end': None,
                             'macro_opt_cycle': 1000, 'micro_opt_cycle': 5,
                             'thr_econv': 5.0e-4, 'thr_fconv': 1.0e-6,
                             'printlevel': 0, 'energy_function': 'xtb',
-                            'gauss_exedir': '/home/center/opt/x86_64/apps/gaussian16/c01/g16',
+                            'gauss_exedir': '/fefs/opt/x86_64/Gaussian/g16/',
                             'gauss_scrdir': os.getcwd(), 'g16_template': 'g16.template',
                             'qcmethod' : 'pm6',
                             'xtb_call': 'xtb', 'gfn': '2',
                             'charge': 0, 'mult': 1,
                             'solvmethod': None, 'solvent': 'water',
-                            'nprocs': 1, 'memory': '2GB'}
+                            'nprocs': 1, 'memory': '3GB'}
 
-    input_params = file2dict(param_file, ['LAQA settings'])
-    input_params = set_default(input_params, input_params_default)
+    input_params = laqa_fafoom.utilities.file2dict(param_file, ['LAQA settings'])
+    input_params = laqa_fafoom.utilities.set_default(input_params, input_params_default)
     print('input_params:', input_params)
 
     input_params['energy_function'] = input_params['energy_function'].lower()
@@ -151,13 +155,15 @@ def LAQA_do_opt(input_params, mols):
 
         sdf_string = Chem.MolToMolBlock(mols[j])
         if energy_function == "g16" or energy_function == "gaussian":
-            energy, force, sdf_string_opt = g16_exec(sdf_string, gauss_exedir, gauss_scrdir,
-                                                     nprocs, memory, jobtype='gradient',
-                                                     charge=charge, mult=mult,
-                                                     qcmethod=qcmethod)
+            energy, force, sdf_string_opt = laqa_fafoom.pyg16.g16_exec(
+                sdf_string, gauss_exedir, gauss_scrdir,
+                nprocs, memory, jobtype='gradient',
+                charge=charge, mult=mult,
+                qcmethod=qcmethod
+            )
         elif energy_function == "xtb":
             jobtype='gradient'
-            energy, force = xtb_exec(sdf_string, xtb_call, jobtype,
+            energy, force = laqa_fafoom.pyxtb.xtb_exec(sdf_string, xtb_call, jobtype,
                                      gfn, charge, mult, optsteps, solvmethod, solvent)
         else:
             print("NYI for code: ", energy_function)
@@ -208,17 +214,17 @@ def LAQA_do_opt(input_params, mols):
 
         sdf_string = Chem.MolToMolBlock(mols[j])
         if energy_function == "g16" or energy_function == "gaussian":
-            energy, force, sdf_string_opt = g16_exec(sdf_string, gauss_exedir, gauss_scrdir,
+            energy, force, sdf_string_opt = laqa_fafoom.pyg16.g16_exec(sdf_string, gauss_exedir, gauss_scrdir,
                                                      nprocs, memory, jobtype='opt',
                                                      charge=charge, mult=mult,
                                                      qcmethod=qcmethod,
                                                      optsteps=micro_opt_cycle)
         elif energy_function == "xtb":
             jobtype='opt'
-            energy, sdf_string_opt = xtb_exec(sdf_string, xtb_call, jobtype,
+            energy, sdf_string_opt = laqa_fafoom.pyxtb.xtb_exec(sdf_string, xtb_call, jobtype,
                             gfn, charge, mult, optsteps, solvmethod, solvent)
             jobtype='gradient'
-            energy, force = xtb_exec(sdf_string_opt, xtb_call, jobtype,
+            energy, force = laqa_fafoom.pyxtb.xtb_exec(sdf_string_opt, xtb_call, jobtype,
                                      gfn, charge, mult, optsteps, solvmethod, solvent)
         else:
             print("NYI for computational chemistry code: ", energy_function)
@@ -332,7 +338,26 @@ def LAQA_optgeom(param_file):
           .format(t_laqa_end - t_laqa_bgn))
 
 
-if __name__ == "__main__":
+def main():
 
-    param_file = sys.argv[1]
-    LAQA_optgeom(param_file)
+    #param_file = sys.argv[1]
+    parser = argparse.ArgumentParser(
+        description='Search energetically favorable molecular conformations via LAQA optimization'
+    )
+    parser.add_argument("input", help="Input file")
+    parser.add_argument(
+        "-v", "--verbose", action='store_true',
+        help="verbose mode"
+    )
+    args = parser.parse_args()
+    #print(args)
+
+    param_file = args.input
+    if os.path.exists(param_file):
+        LAQA_optgeom(param_file)
+    else:
+        print(f'{param_file} is not exists.')
+
+
+if __name__ == "__main__":
+    sys.exit(main())

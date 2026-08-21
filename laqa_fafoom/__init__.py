@@ -1,1 +1,15 @@
-from laqa_fafoom.laqa_confopt import *
+from . import (
+    #laqa_confopt_QCforever,
+    laqa_confopt,
+    initgeom,
+    laqa_optgeom,
+    deg_of_freedom,
+    get_parameters,
+    utilities,
+    run_utilities,
+    measure,
+    structure,
+    pyff,
+    pyxtb,
+    pyg16
+)

@@ -2,35 +2,38 @@ import sys
 import os
 import time
 import datetime
-
-from laqa_fafoom.structure import MoleculeDescription, Structure
-from laqa_fafoom.run_utilities import detect_energy_function, optimize, check_for_kill, \
-    relax_info, find_linked_params
-from laqa_fafoom.utilities import file2dict, set_default
+import argparse
 
 import random
 import numpy as np
 
+try:
+    from qcforever import laqa_fafoom
+except ImportError:
+    HAS_QCFOREVER = False
+    import laqa_fafoom
+else:
+    HAS_QCFOREVER = True
 
-def LAQA_initgeom(param_file):
+
+def LAQA_initgeom(param_file, SMILES=""):
 
     t_init_bgn = time.time()
-    print("\nStart 3D structure initialization job at ",
-          datetime.datetime.now(), '\n')
+    print(f"Start 3D structure initialization job at {datetime.datetime.now()}")
 
     # Decide for restart or a simple run: NYI
     #opt = simple_or_restart()
 
     # Build a dictionary from Initial Geometry settings of the parameter file.
 
-    params = file2dict(param_file, ['Initial geometry'])
+    params = laqa_fafoom.utilities.file2dict(param_file, ['Initial geometry'])
 
-    dict_default = {'popsize': 100, 'max_iter': 30,
+    dict_default = {'popsize': 10, 'max_iter': 30,
                     'iter_limit_conv': 20, 'energy_diff_conv': 0.001,
                     'cnt_max': 500, 'seed': None,
                     'energy_function': 'ff',
-                    'force_field': 'uff', 'optsteps': 1000,
-                    'energy_tol': 1.0-6, 'force_tol': 1.0e-4,
+                    'force_field': 'uff', 'optsteps': 200,
+                    'energy_tol': 1.0e-6, 'force_tol': 1.0e-4,
                     'xtb_call': 'xtb', 'gfn': '2',
                     'gauss_exedir': '~/bin/g16', 'gauss_scrdir': os.getcwd(),
                     'qcmethod': 'pm6', 'solvmethod': None, 'solvent': 'water',
@@ -40,22 +43,32 @@ def LAQA_initgeom(param_file):
 
     # Set defaults for parameters not defined in the parameter file.
 
-    params = set_default(params, dict_default)
+    params = laqa_fafoom.utilities.set_default(params, dict_default)
     print("params: ", params)
-    energy_function = detect_energy_function(params)
+    energy_function = laqa_fafoom.run_utilities.detect_energy_function(params)
     popsize = params['popsize']
     cnt_max = params['cnt_max']
     seed = params['seed']
     printlevel = params['printlevel']
+    sdf_out = params['sdf_out'] 
     print("energy_function: " , energy_function)
     print("popsize:", popsize, "cnt_max: ", cnt_max, "seed ", seed)
 
     random.seed(seed)
     np.random.seed(seed=seed)
 
+    # Remove sdf output file if output file exists.
+    if os.path.exists(sdf_out):
+        os.remove(sdf_out)
+
     # Set up template molecule.
 
-    mol = MoleculeDescription(param_file)
+    mol = laqa_fafoom.structure.MoleculeDescription(param_file)
+
+################To get a SMILES string from an augment#########
+    if SMILES != "":
+        mol.smiles = SMILES
+###############################################################
 
     print("SMILES: ", mol.smiles)
     print("distance_cutoff_1: ", mol.distance_cutoff_1)
@@ -64,13 +77,13 @@ def LAQA_initgeom(param_file):
     # Assign the permanent attributes to the molecule.
 
     mol.get_parameters()
-    mol.create_template_sdf()
+    mol.create_template_sdf(random_seed=seed)
     if printlevel > 0:
         print(mol.template_sdf_string)
 
     # Check for potential degree of freedom related parameters.
 
-    linked_params = find_linked_params(mol, params)
+    linked_params = laqa_fafoom.run_utilities.find_linked_params(mol, params)
     print("Number of atoms: ", mol.atoms)
     print("Number of bonds: ", mol.bonds)
 
@@ -87,7 +100,7 @@ def LAQA_initgeom(param_file):
         # Generate sensible and unique 3D structures.
 
         print("\n----- New trial: {:6} -----\n".format(cnt+1))
-        str3d = Structure(mol)
+        str3d = laqa_fafoom.structure.Structure(mol)
         str3d.generate_structure()
 
         if not str3d.is_geometry_valid():
@@ -98,13 +111,13 @@ def LAQA_initgeom(param_file):
                 # Perform the local optimization
 
                 name = "initial_%d" % (len(population))
-                optimize(str3d, energy_function, params, name)
-                check_for_kill()
+                laqa_fafoom.run_utilities.optimize(str3d, energy_function, params, name)
+                laqa_fafoom.run_utilities.check_for_kill()
                 str3d.send_to_blacklist(blacklist)
                 population.append(str3d)
                 print("Geometry of {} is added to the population, energy: {:.5f}"
                       .format(str(str3d), str3d.energy))
-                relax_info(str3d)
+                laqa_fafoom.run_utilities.relax_info(str3d)
             else:
                 print("Geomerty of " + str(str3d) + " is fine, but already known.")
                       
@@ -135,7 +148,25 @@ def LAQA_initgeom(param_file):
           .format(t_init_end - t_init_bgn))
 
 
-if __name__ == '__main__':
+def main():
+    #param_file = sys.argv[1]
+    parser = argparse.ArgumentParser(
+        description='Generate molecular conformations for LAQA optimization'
+    )
+    parser.add_argument("input", help="Input file")
+    parser.add_argument(
+        "-v", "--verbose", action='store_true',
+        help="verbose mode"
+    )
+    args = parser.parse_args()
+    #print(args)
 
-    param_file = sys.argv[1]
-    LAQA_initgeom(param_file)
+    param_file = args.input
+    if os.path.exists(param_file):
+        LAQA_initgeom(param_file)
+    else:
+        print(f'{param_file} is not exists.')
+
+    
+if __name__ == "__main__":
+    sys.exit(main())

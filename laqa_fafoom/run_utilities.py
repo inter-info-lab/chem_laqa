@@ -19,17 +19,23 @@ from __future__ import division
 import glob
 import sys
 
-from laqa_fafoom.utilities import remover_file, remover_dir, backup
+try:
+    from qcforever import laqa_fafoom
+except ImportError:
+    HAS_QCFOREVER = False
+    import laqa_fafoom
+else:
+    HAS_QCFOREVER = True
 
 
 def simple_or_restart():
-    """ Select the type of run. If the all backup files are present the run
+    """ Select the type of run. If the all utilities.backup files are present the run
     will be restarted. Otherwise, the directory will be cleaned and a new run
     will be started."""
 
-    for_restart = ["backup_population.dat", "backup_mol.dat",
-                   "backup_min_energy.dat", "backup_iteration.dat",
-                   "backup_blacklist.dat"]
+    for_restart = ["utilities.backup_population.dat", "utilities.backup_mol.dat",
+                   "utilities.backup_min_energy.dat", "utilities.backup_iteration.dat",
+                   "utilities.backup_blacklist.dat"]
     opt = "restart"
     for filename in for_restart:
         if glob.glob(filename):
@@ -39,17 +45,17 @@ def simple_or_restart():
     if opt == "simple":
         print("Cleaning up the directory")
         for d in glob.glob("initial_*"):
-            remover_dir(d)
+            utilities.remover_dir(d)
         for d in glob.glob("generation_*_child*"):
-            remover_dir(d)
-        remover_dir("blacklist")
+            utilities.remover_dir(d)
+        utilities.remover_dir("blacklist")
         for f in ["mol.sdf", "control.in", "geometry.in", "output.txt",
                   "result.out", "kill.dat"]:
-            remover_file(f)
+            utilities.remover_file(f)
         for f in for_restart:
-            remover_file(f)
+            utilities.remover_file(f)
     if opt == "restart":
-        remover_file("kill.dat")
+        utilities.remover_file("kill.dat")
     return opt
 
 
@@ -151,11 +157,11 @@ def optimize(structure, energy_function, params, name=None):
 
 def perform_backup(mol, population, blacklist, iteration, min_energy):
     """Write object representation to files for a future restart."""
-    backup("backup_mol.dat", mol)
-    backup("backup_population.dat", population)
-    backup("backup_blacklist.dat", blacklist)
-    backup("backup_iteration.dat", iteration)
-    backup("backup_min_energy.dat", min_energy)
+    utilities.backup("utilities.backup_mol.dat", mol)
+    utilities.backup("utilities.backup_population.dat", population)
+    utilities.backup("utilities.backup_blacklist.dat", blacklist)
+    utilities.backup("utilities.backup_iteration.dat", iteration)
+    utilities.backup("utilities.backup_min_energy.dat", min_energy)
 
 
 def find_linked_params(mol, params):

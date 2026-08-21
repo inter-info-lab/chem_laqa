@@ -371,7 +371,7 @@ def aims2sdf(aims_string, sdf_template_string):
                                                    float(line[1]),
                                                    float(line[2]), str(' '),
                                                    line[3]))
-            for j in xrange(4, len(line)):
+            for j in range(4, len(line)):
                 if j == 4:
                     c.append('%3d' % int(line[j]))
                 elif j == len(line)-1:
@@ -405,7 +405,7 @@ def xyz2sdf(xyz_string, sdf_template_string):
                                                    float(line[1]),
                                                    float(line[2]), str(' '),
                                                    line[3]))
-            for j in xrange(4, len(line)):
+            for j in range(4, len(line)):
                 if j == 4:
                     c.append('%3d' % int(line[j]))
                 elif j == len(line)-1:
@@ -436,7 +436,7 @@ def mirror_sdf(sdf_string):
                                                    float(line[1]),
                                                    float(line[2]), str(' '),
                                                    line[3]))
-            for j in xrange(4, len(line)):
+            for j in range(4, len(line)):
                 if j == 4:
                     c.append('%3d' % int(line[j]))
                 elif j == len(line)-1:

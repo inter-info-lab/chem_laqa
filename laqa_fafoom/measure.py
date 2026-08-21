@@ -22,7 +22,13 @@ import numpy as np
 from rdkit import Chem
 from rdkit.Chem import rdMolTransforms
 
-from laqa_fafoom.utilities import get_vec, tor_rmsd, xyz2sdf
+try:
+    from qcforever import laqa_fafoom
+except ImportError:
+    HAS_QCFOREVER = False
+    import laqa_fafoom
+else:
+    HAS_QCFOREVER = True
 
 
 def ig(x):
@@ -367,7 +373,7 @@ def pyranosering_set(sdf_string, position, new_dih, new_ang):
         return xyz_string
 
     molecule = initialize(sdf_string)
-    sdf_string = xyz2sdf(mutate_ring(molecule, new_dih, new_ang), sdf_string)
+    sdf_string = laqa_fafoom.utilities.xyz2sdf(mutate_ring(molecule, new_dih, new_ang), sdf_string)
 
     return sdf_string
 
@@ -401,6 +407,6 @@ def pyranosering_measure(sdf_string, position, dict_of_options):
     rmsd_dict = {}
 
     for key in dict_of_options:
-        rmsd_dict[key] = (tor_rmsd(2, get_vec(all_ang, dict_of_options[key])))
+        rmsd_dict[key] = (laqa_fafoom.utilities.tor_rmsd(2, laqa_fafoom.utilities.get_vec(all_ang, dict_of_options[key])))
 
     return int(min(rmsd_dict.iteritems(), key=ig(1))[0])
